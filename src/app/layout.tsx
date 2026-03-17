@@ -1,26 +1,30 @@
-import "./globals.css"
-import Navbar from "@/lib/components/navbar"
-import Footer from "@/lib/components/footer"
+import type { Metadata } from "next";
+import { Albert_Sans, Archivo } from "next/font/google";
+import "./globals.css";
 
-export const metadata = {
-  title: "Business Name",
-  description: "Short description of the business."
-}
+const albertSans = Albert_Sans({
+  subsets: ["latin"],
+  variable: "--font-albert-sans",
+});
+
+const archivo = Archivo({
+  subsets: ["latin"],
+  variable: "--font-archivo",
+});
+
+export const metadata: Metadata = {
+  title: "Petite Dumpling",
+  description: "Handcrafted dumpling",
+};
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-1 max-w-6xl mx-auto px-6 py-12">
-          {children}
-        </main>
-        <Footer />
+      <body className={`${albertSans.variable} ${archivo.variable} antialiased`}>
+        {children}
       </body>
     </html>
-  )
+  );
 }
