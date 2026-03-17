@@ -1,23 +1,23 @@
-export default function HomePage() {
+import Navbar from "@/lib/components/navbar";
+import Header from "@/lib/components/Header";
+import FirstSection from "@/lib/components/FirstSection";
+import MenuPosterSection from "@/lib/components/MenuPosterSection";
+import MenuSection from "@/lib/components/MenuSection";
+import OrderFeaturesSection from "@/lib/components/OrderFeaturesSection";
+import Foot from "@/lib/components/Foot";
+
+export default function Home() {
   return (
-    <div className="space-y-8">
-      <h1 className="text-4xl font-bold">
-        Welcome to Business Name
-      </h1>
-
-      <p className="text-lg text-gray-600">
-        Replace this section with a strong value proposition.
-      </p>
-
-      <div className="flex gap-4">
-        <button className="px-6 py-3 bg-black text-white rounded-md">
-          Primary Action
-        </button>
-
-        <button className="px-6 py-3 border rounded-md">
-          Secondary Action
-        </button>
-      </div>
-    </div>
-  )
+    <>
+      <Navbar />
+      <main>
+        <Header />
+        <FirstSection />
+        <MenuSection />
+        <MenuPosterSection />
+        <OrderFeaturesSection />
+        <Foot />
+      </main>
+    </>
+  );
 }
