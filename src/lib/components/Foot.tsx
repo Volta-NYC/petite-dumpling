@@ -9,13 +9,13 @@ import {
   Facebook,
   Music2,
 } from "lucide-react";
- 
+
 export default function Footer() {
   return (
     <footer className="relative w-full overflow-hidden bg-[#050505] text-[#F7F1E8]">
       {/* subtle top border glow */}
       <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[#EDC301]/60 to-transparent" />
- 
+
       <div className="mx-auto flex max-w-[1600px] flex-col gap-12 px-6 py-12 sm:px-10 md:px-14 lg:flex-row lg:items-center lg:justify-between lg:gap-16 lg:px-20 lg:py-16">
         {/* LEFT */}
         <div className="flex-1">
@@ -26,7 +26,7 @@ export default function Footer() {
             >
               Petite Dumpling
             </p>
- 
+
             <h2
               className="mt-3 text-[38px] font-extrabold uppercase leading-[0.95] text-white sm:text-[48px] md:text-[58px] lg:text-[66px]"
               style={{ fontFamily: "var(--font-archivo), sans-serif" }}
@@ -35,14 +35,14 @@ export default function Footer() {
               <br />
               7 days a week
             </h2>
- 
+
             <p
               className="mt-5 text-[20px] font-semibold text-[#F2D98D] sm:text-[24px] lg:text-[28px]"
               style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}
             >
               11:30AM – 9:00PM
             </p>
- 
+
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <div className="rounded-[26px] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
                 <div className="flex items-start gap-4">
@@ -65,7 +65,7 @@ export default function Footer() {
                   </div>
                 </div>
               </div>
- 
+
               <div className="rounded-[26px] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
                 <div className="flex items-start gap-4">
                   <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#EDC301] text-black">
@@ -87,7 +87,7 @@ export default function Footer() {
                   </div>
                 </div>
               </div>
- 
+
               <div className="rounded-[26px] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm sm:col-span-2">
                 <div className="flex items-start gap-4">
                   <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#EDC301] text-black">
@@ -111,7 +111,7 @@ export default function Footer() {
                   </div>
                 </div>
               </div>
- 
+
               <div className="rounded-[26px] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm sm:col-span-2">
                 <div className="flex items-start gap-4">
                   <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#EDC301] text-black">
@@ -137,7 +137,7 @@ export default function Footer() {
                 </div>
               </div>
             </div>
- 
+
             {/* socials */}
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a
@@ -165,7 +165,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
- 
+
         {/* RIGHT */}
         <div className="flex flex-1 items-center justify-center lg:justify-end">
           <div className="relative flex w-full max-w-[520px] items-center justify-center rounded-[34px] border border-[#EDC301]/15 bg-gradient-to-br from-[#151515] to-[#090909] p-8 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
@@ -179,7 +179,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
- 
+
       {/* bottom */}
       <div className="border-t border-white/8 px-6 py-5 sm:px-10 md:px-14 lg:px-20">
         <div className="flex flex-col items-center justify-between gap-2 sm:flex-row">
@@ -187,7 +187,7 @@ export default function Footer() {
             className="text-[13px] text-[#CBB98C] sm:text-[14px]"
             style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}
           >
-            © 2024 Petite Dumpling. All rights reserved.
+            © 2026 Petite Dumpling. All rights reserved.
           </p>
           <a
             href="https://voltanyc.org/"
