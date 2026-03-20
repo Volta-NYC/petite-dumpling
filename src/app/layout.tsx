@@ -17,13 +17,18 @@ export const metadata: Metadata = {
   description: "Handcrafted dumpling",
 };
 
+import Navbar from "@/lib/components/navbar";
+import Foot from "@/lib/components/Foot";
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body className={`${albertSans.variable} ${archivo.variable} antialiased`}>
+        <Navbar />
         {children}
+        <Foot />
       </body>
     </html>
   );
