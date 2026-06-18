@@ -277,12 +277,12 @@ export default function OrderFeaturesSection() {
             "
           >
             <FeatureCard
-              image={image1}
+              image={image2}
               title="Braised Short Ribs"
               description="Slow cooked with cardamom, miso, wines and herbs"
             />
             <FeatureCard
-              image={image2}
+              image={image1}
               title="Har Gow – Shrimp Dumpling"
               description="Steamed smash shrimp wrapped in translucence skin. Sorry, there is a bit of pork lard in it!"
             />
