@@ -1,29 +1,115 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import delivery from "@/assets/delivery.png";
 import pickup from "@/assets/pickup.png";
 import image1 from "@/assets/image1.png";
 import image2 from "@/assets/image2.png";
 import image3 from "@/assets/image3.png";
+import { Star } from "lucide-react";
 
 type FeatureCardProps = {
   image: any;
   title: string;
   description: string;
+  delay?: string;
 };
 
-function FeatureCard({ image, title, description }: FeatureCardProps) {
+type Review = {
+  name: string;
+  location: string;
+  date: string;
+  text: string;
+};
+
+const reviews: Review[] = [
+  {
+    name: "Dani L.",
+    location: "Queens, NY",
+    date: "May 5, 2026",
+    text: "The spinach tofu congee with egg is very comforting. They have tons of veg friendly options and it's very affordable!",
+  },
+  {
+    name: "Ann S.",
+    location: "Cincinnati, OH",
+    date: "Sep 22, 2025",
+    text: "The perfect spot for lunch. Chicken siumai, bao, cucumber salad, dumplings, and scallion pancakes were all delicious.",
+  },
+  {
+    name: "Sally X.",
+    location: "Brooklyn, NY",
+    date: "Jan 1, 2026",
+    text: "Small but very cozy. The server was friendly, funny and helpful. Soup dumplings and Filipino fried ribs were perfect for lunch.",
+  },
+  {
+    name: "Kara E.",
+    location: "Claremont, CA",
+    date: "Dec 23, 2025",
+    text: "The food was amazing. Highlights were har gao, barbecue pork bun, soup dumplings, and any of the pot stickers.",
+  },
+  {
+    name: "Theresa N.",
+    location: "San Francisco, CA",
+    date: "Jan 31, 2026",
+    text: "A surprise find during our vacation in New York. Delicious food, attentive service, and cozy ambiance.",
+  },
+  {
+    name: "Paula R.",
+    location: "Manhattan, NY",
+    date: "Jun 9, 2025",
+    text: "A tiny restaurant with an extensive menu. Pumpkin rice balls, salty plum iced tea, bao buns, and soup dumplings were a little gem.",
+  },
+  {
+    name: "Sam H.",
+    location: "Dallas, TX",
+    date: "May 31, 2025",
+    text: "Pork and chicken dumplings were delicious. I will be back to try other menu items soon.",
+  },
+  {
+    name: "Courtney W.",
+    location: "San Mateo, CA",
+    date: "Jan 1, 2026",
+    text: "Great fast service and delicious food. Simple dishes that deliver on quality and flavor.",
+  },
+  {
+    name: "David O.",
+    location: "Rye, NY",
+    date: "Feb 25, 2025",
+    text: "Food was delicious and authentic. Great seasoning with herbs made each dish a delight. Service was top-notch.",
+  },
+  {
+    name: "Judith V.",
+    location: "New York, NY",
+    date: "Jul 15, 2025",
+    text: "Warm interactions, an impressively done setup, and exceptional menu items. Every selection has been fantastic.",
+  },
+  {
+    name: "Sixto A.",
+    location: "Brooklyn, NY",
+    date: "Sep 20, 2024",
+    text: "These soup dumplings are right up there with Din Tai Fung. Everything felt fresh, and the service was fantastic.",
+  },
+  {
+    name: "Yelena C.",
+    location: "Brooklyn, NY",
+    date: "Nov 2, 2022",
+    text: "A cozy new place with wonderful, fast service. The food was delicious and had a homemade taste.",
+  },
+];
+
+function FeatureCard({ image, title, description, delay = "0ms" }: FeatureCardProps) {
   return (
     <div
+      data-reveal
       className="
-        group relative flex h-full flex-col overflow-hidden
-        rounded-[28px] border-[4px] bg-white
+        reveal-up group relative flex h-full flex-col overflow-hidden
+        rounded-[8px] border-[4px] bg-white
         shadow-[0_18px_40px_rgba(49,35,18,0.08)]
         transition-all duration-500 ease-out
         hover:-translate-y-2 hover:shadow-[0_28px_60px_rgba(49,35,18,0.14)]
       "
-      style={{ borderColor: "#F9C0B7" }}
+      style={{ borderColor: "#F9C0B7", "--reveal-delay": delay } as CSSProperties}
     >
       <div className="relative overflow-hidden rounded-t-[22px] p-3 sm:p-4">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,217,207,0.28),transparent_45%)]" />
@@ -31,8 +117,7 @@ function FeatureCard({ image, title, description }: FeatureCardProps) {
           src={image}
           alt={title}
           className="
-            relative z-10 h-[170px] w-full rounded-[20px] object-cover
-            transition duration-500 group-hover:scale-[1.05]
+            lift-image relative z-10 h-[170px] w-full rounded-[6px] object-cover
             sm:h-[190px]
             lg:h-[210px]
           "
@@ -41,10 +126,8 @@ function FeatureCard({ image, title, description }: FeatureCardProps) {
 
       <div className="flex flex-1 flex-col px-5 pb-5 pt-1 sm:px-6 sm:pb-6">
         <h3
-          className="text-[26px] leading-[1.05] sm:text-[28px]"
+          className="display-font text-[36px] leading-[0.98] sm:text-[40px]"
           style={{
-            fontFamily: '"Albert Sans", sans-serif',
-            fontWeight: 800,
             color: "#312312",
           }}
         >
@@ -64,7 +147,7 @@ function FeatureCard({ image, title, description }: FeatureCardProps) {
 
         <button
           className="
-            group/btn relative mt-5 inline-flex w-fit items-center gap-2 overflow-hidden
+            cta-sweep group/btn relative mt-5 inline-flex min-h-[44px] w-fit items-center gap-2 overflow-hidden
             rounded-full px-5 py-2.5
             text-[14px] transition duration-300 hover:scale-[1.04]
           "
@@ -84,12 +167,50 @@ function FeatureCard({ image, title, description }: FeatureCardProps) {
   );
 }
 
+function ReviewCard({ review }: { review: Review }) {
+  return (
+    <article className="review-card flex w-[310px] shrink-0 flex-col rounded-[8px] border border-white/12 bg-white/[0.07] p-5 shadow-[0_20px_48px_rgba(0,0,0,0.18)] backdrop-blur-md sm:w-[360px]">
+      <div className="flex items-center gap-1 text-[#EDC301]" aria-label="5 star review">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <Star key={index} size={18} fill="currentColor" strokeWidth={1.6} aria-hidden="true" />
+        ))}
+      </div>
+      <p className="mt-4 flex-1 text-[16px] leading-[1.45] text-[#FFF8E7]">
+        “{review.text}”
+      </p>
+      <div className="mt-5 border-t border-white/10 pt-4">
+        <p className="text-[16px] font-extrabold text-white">{review.name}</p>
+        <p className="mt-1 text-[13px] text-[#F7E9CA]">
+          {review.location} · {review.date}
+        </p>
+      </div>
+    </article>
+  );
+}
+
+function ReviewsMarquee() {
+  const duplicatedReviews = [...reviews, ...reviews];
+
+  return (
+    <div className="review-marquee mt-8" aria-label="Five star customer reviews">
+      <div className="review-marquee-track">
+        {duplicatedReviews.map((review, index) => (
+          <div key={`${review.name}-${review.date}-${index}`} aria-hidden={index >= reviews.length}>
+            <ReviewCard review={review} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function OrderFeaturesSection() {
   return (
     <section className="w-full overflow-hidden">
       {/* ORDER ONLINE */}
       <div
         className="relative overflow-hidden"
+        id="order"
         style={{ backgroundColor: "#F4E2CD" }}
       >
         <div className="pointer-events-none absolute inset-0">
@@ -109,19 +230,17 @@ export default function OrderFeaturesSection() {
         >
           <h2
             className="
-              text-center uppercase leading-none
-              text-[44px]
-              sm:text-[58px]
-              md:text-[70px]
-              lg:text-[78px]
+              display-font text-center leading-none
+              text-[56px]
+              sm:text-[76px]
+              md:text-[94px]
+              lg:text-[108px]
             "
             style={{
-              fontFamily: "Montserrat, sans-serif",
-              fontWeight: 800,
               color: "#312312",
             }}
           >
-            ORDER ONLINE
+            Order Online
           </h2>
 
           <p
@@ -138,7 +257,7 @@ export default function OrderFeaturesSection() {
               color: "#908B83",
             }}
           >
-            click order button an online order page will pop up
+            Delivery or pickup, whichever gets dumplings to you faster.
           </p>
 
           <div
@@ -155,10 +274,9 @@ export default function OrderFeaturesSection() {
                 <div className="absolute inset-0 scale-90 rounded-full bg-[#FFD202]/25 blur-3xl" />
                 <Image
                   src={delivery}
-                  alt="Delivery"
+                  alt="Delivery order option"
                   className="
-                    relative z-10 h-auto w-[190px] object-contain
-                    transition duration-500 group-hover:scale-[1.06] group-hover:-translate-y-1
+                    lift-image relative z-10 h-auto w-[190px] object-contain
                     sm:w-[220px]
                     lg:w-[250px]
                   "
@@ -168,7 +286,7 @@ export default function OrderFeaturesSection() {
  <Link href="https://www.grubhub.com/restaurant/petite-dumpling-276-5th-avenue-ste-a-brooklyn/4840112?classicAffiliateId=%2Fr%2Fw%2F4840112%2F&utm_source=internal.restaurant.grubhub.com&utm_medium=OOL&utm_campaign=order%20online&utm_content=4840112">
   <button
     className="
-      group relative mt-5 inline-flex items-center justify-center overflow-hidden
+      cta-sweep group relative mt-5 inline-flex min-h-[56px] items-center justify-center overflow-hidden
       rounded-full px-10 py-3.5
       text-[22px]
       sm:mt-6 sm:px-12 sm:py-4 sm:text-[24px]
@@ -195,10 +313,9 @@ export default function OrderFeaturesSection() {
                 <div className="absolute inset-0 scale-90 rounded-full bg-[#F9C0B7]/25 blur-3xl" />
                 <Image
                   src={pickup}
-                  alt="Pick up"
+                  alt="Pickup order option"
                   className="
-                    relative z-10 h-auto w-[190px] object-contain
-                    transition duration-500 group-hover:scale-[1.06] group-hover:-translate-y-1
+                    lift-image relative z-10 h-auto w-[190px] object-contain
                     sm:w-[220px]
                     lg:w-[250px]
                   "
@@ -207,7 +324,7 @@ export default function OrderFeaturesSection() {
 <Link href="https://order.snackpass.co/673beea78cacfab5b17d4e88?utm_source=qr">
               <button
                 className="
-                  group relative mt-5 inline-flex items-center justify-center overflow-hidden
+                  cta-sweep group relative mt-5 inline-flex min-h-[56px] items-center justify-center overflow-hidden
                   rounded-full border-[3px] px-10 py-3.5
                   text-[22px]
                   sm:mt-6 sm:px-12 sm:py-4 sm:text-[24px]
@@ -231,7 +348,36 @@ export default function OrderFeaturesSection() {
         </div>
       </div>
 
-      {/* MORE FEATURES */}
+      {/* SOCIAL PROOF */}
+      <div className="relative overflow-hidden bg-[#312312] px-6 py-14 text-white sm:px-8 md:px-12 lg:px-16">
+        <div className="mx-auto max-w-[1500px]">
+          <div data-reveal className="reveal-up flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <p className="text-[14px] font-extrabold text-[#FFEB8D]">
+                neighborhood trusted
+              </p>
+              <h2 className="display-font mt-2 max-w-[900px] text-[48px] leading-[0.98] text-white sm:text-[64px] lg:text-[78px]">
+                Five-star notes from people who found their dumpling spot.
+              </h2>
+            </div>
+
+            <a
+              href="https://www.yelp.com/biz/petite-dumpling-brooklyn?osq=Petite+Dumpling#reviews"
+              target="_blank"
+              rel="noreferrer"
+              className="cta-sweep inline-flex min-h-[48px] w-fit items-center justify-center rounded-full bg-[#EDC301] px-6 text-[15px] font-extrabold text-white shadow-[0_14px_30px_rgba(237,195,1,0.22)]"
+            >
+              See all reviews
+            </a>
+          </div>
+
+          <div data-reveal className="reveal-up" style={{ "--reveal-delay": "120ms" } as CSSProperties}>
+            <ReviewsMarquee />
+          </div>
+        </div>
+      </div>
+
+      {/* MORE HANDMADE FAVORITES */}
       <div
         className="relative overflow-hidden"
         style={{ backgroundColor: "#F2E9E2" }}
@@ -253,20 +399,23 @@ export default function OrderFeaturesSection() {
         >
           <h2
             className="
-              text-center uppercase leading-none
-              text-[44px]
-              sm:text-[58px]
-              md:text-[70px]
-              lg:text-[78px]
+              display-font text-center leading-none
+              text-[54px]
+              sm:text-[72px]
+              md:text-[90px]
+              lg:text-[104px]
             "
             style={{
-              fontFamily: "Montserrat, sans-serif",
-              fontWeight: 800,
               color: "#312312",
             }}
           >
-            MORE FEATURES
+            More Handmade Favorites
           </h2>
+
+          <p className="mx-auto mt-4 max-w-[760px] text-center text-[16px] leading-[1.4] text-[#6F675F] sm:text-[18px]">
+            A few deeper-cut dishes from the full menu, framed with the same care
+            as the featured cards above.
+          </p>
 
           <div
             className="
@@ -280,16 +429,19 @@ export default function OrderFeaturesSection() {
               image={image2}
               title="Braised Short Ribs"
               description="Slow cooked with cardamom, miso, wines and herbs"
+              delay="0ms"
             />
             <FeatureCard
               image={image1}
               title="Har Gow – Shrimp Dumpling"
               description="Steamed smash shrimp wrapped in translucence skin. Sorry, there is a bit of pork lard in it!"
+              delay="110ms"
             />
             <FeatureCard
               image={image3}
               title="Sichuan Bàn-Mein"
               description="Tossed Dao Xiao noodle(fettuccini) with mala spicy sauce, cucumber, shredded chicken and shiitaki mushrooms"
+              delay="220ms"
             />
           </div>
         </div>

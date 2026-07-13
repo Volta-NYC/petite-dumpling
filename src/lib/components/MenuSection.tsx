@@ -1,6 +1,7 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
+import type { CSSProperties } from "react";
 import third from "@/assets/third.png";
 
 import img1 from "@/assets/img1.png";
@@ -22,6 +23,7 @@ type MenuCardProps = {
   description?: string;
   showDescription?: boolean;
   className?: string;
+  delay?: string;
 };
 
 function MenuCard({
@@ -32,12 +34,14 @@ function MenuCard({
   description,
   showDescription = false,
   className = "",
+  delay = "0ms",
 }: MenuCardProps) {
   return (
     <div
+      data-reveal
       className={`
-        group relative w-full max-w-[330px]
-        rounded-[30px] border-[4px] bg-white
+        reveal-up group relative w-full max-w-[330px]
+        rounded-[26px] border-[4px] bg-white
         px-6 pt-7 pb-6
         min-h-[355px]
         overflow-hidden
@@ -46,7 +50,7 @@ function MenuCard({
         hover:shadow-[0_24px_60px_rgba(49,35,18,0.18)]
         ${className}
       `}
-      style={{ borderColor: "#EDC301" }}
+      style={{ borderColor: "#EDC301", "--reveal-delay": delay } as CSSProperties}
     >
       <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
         <div className="absolute -top-10 left-1/2 h-32 w-32 -translate-x-1/2 rounded-full bg-[#FFEB8D]/30 blur-3xl" />
@@ -55,10 +59,8 @@ function MenuCard({
 
       <div className="relative z-10 flex h-full flex-col items-center">
         <h3
-          className="text-center leading-[1.05] text-[30px] sm:text-[32px]"
+          className="display-font text-center leading-[0.98] text-[36px] sm:text-[40px]"
           style={{
-            fontFamily: '"Albert Sans", sans-serif',
-            fontWeight: 800,
             color: "#312312",
           }}
         >
@@ -86,7 +88,8 @@ function MenuCard({
 
           <Image
             src={tagIcon}
-            alt={`${tag} icon`}
+            alt=""
+            aria-hidden="true"
             className="h-[22px] w-[22px] object-contain transition duration-300 group-hover:rotate-12 sm:h-[26px] sm:w-[26px]"
           />
         </div>
@@ -96,9 +99,7 @@ function MenuCard({
             src={foodImage}
             alt={title}
             className="
-              h-auto w-[78%] object-contain
-              transition duration-500 ease-out
-              group-hover:scale-110 group-hover:-translate-y-1
+              lift-image h-auto w-[78%] object-contain
             "
           />
         </div>
@@ -149,19 +150,17 @@ export default function MenuSection() {
         >
           <h2
             className="
-              text-center uppercase leading-none
-              text-[48px]
-              sm:text-[60px]
-              md:text-[72px]
-              lg:text-[84px]
+              display-font text-center leading-none
+              text-[58px]
+              sm:text-[76px]
+              md:text-[94px]
+              lg:text-[108px]
             "
             style={{
-              fontFamily: "Montserrat, sans-serif",
-              fontWeight: 800,
               color: "#312312",
             }}
           >
-            MENU
+            Chef&apos;s Picks
           </h2>
 
           <div
@@ -193,15 +192,15 @@ export default function MenuSection() {
                 color: "#908B83",
               }}
             >
-              Welcome new visitors or returning friends; we&apos;re excited about
-              our new menu. The menu expresses our many eclectic flavors and
-              dishes. Our chef, Mei Chau, has created some unique dishes you must
-              try.
+              Welcome, new visitors and returning friends. Chef Mei Chau&apos;s menu
+              moves between classic dim sum, neighborhood comfort, and a few
+              playful plates with a wink. Order too much. Share anyway.
             </p>
 
             <Image
               src={third}
-              alt="dumpling icon"
+              alt=""
+              aria-hidden="true"
               className="
                 absolute bottom-[-12px] right-4
                 h-auto w-[92px]
@@ -237,19 +236,17 @@ export default function MenuSection() {
         >
           <h2
             className="
-              text-center leading-none
-              text-[40px]
-              sm:text-[54px]
-              md:text-[66px]
-              lg:text-[74px]
+              display-font text-center leading-none
+              text-[50px]
+              sm:text-[66px]
+              md:text-[82px]
+              lg:text-[94px]
             "
             style={{
-              fontFamily: "Montserrat, sans-serif",
-              fontWeight: 800,
               color: "#312312",
             }}
           >
-            Highlights From Our Menu
+            Small Plate Stars
           </h2>
 
           <div
@@ -288,6 +285,7 @@ export default function MenuSection() {
               tag="popular"
               tagIcon={img1}
               foodImage={foodimg2}
+              delay="0ms"
               className="xl:translate-y-6 lg:pt-10"
             />
             <MenuCard
@@ -295,12 +293,14 @@ export default function MenuSection() {
               tag="dumpling"
               tagIcon={dumpling}
               foodImage={foodimg1}
+              delay="110ms"
             />
             <MenuCard
               title="SPICY CHICKEN GUA BAO"
               tag="spicy"
               tagIcon={spicy}
               foodImage={foodimg3}
+              delay="220ms"
               className="xl:translate-y-6"
             />
           </div>
@@ -359,7 +359,10 @@ export default function MenuSection() {
             "
           >
             {/* LEFT FEATURED CARD */}
-            <div className="lg:col-span-7">
+            <div
+              data-reveal
+              className="reveal-up lg:col-span-7"
+            >
               <div
                 className="
                   group relative overflow-hidden
@@ -382,14 +385,12 @@ export default function MenuSection() {
                   <div className="flex max-w-[360px] flex-col items-start">
                     <h3
                       className="
-                        leading-[0.98]
-                        text-[40px]
-                        sm:text-[48px]
-                        lg:text-[56px]
+                        display-font leading-[0.94]
+                        text-[52px]
+                        sm:text-[62px]
+                        lg:text-[72px]
                       "
                       style={{
-                        fontFamily: '"Albert Sans", sans-serif',
-                        fontWeight: 800,
                         color: "#312312",
                       }}
                     >
@@ -418,7 +419,8 @@ export default function MenuSection() {
                       </span>
                       <Image
                         src={spicy}
-                        alt="spicy icon"
+                        alt=""
+                        aria-hidden="true"
                         className="h-[24px] w-[24px] object-contain transition duration-300 group-hover:rotate-12 sm:h-[28px] sm:w-[28px]"
                       />
                     </div>
@@ -446,11 +448,9 @@ export default function MenuSection() {
                       <div className="absolute inset-0 scale-90 rounded-full bg-[#FFEB8D]/30 blur-3xl" />
                       <Image
                         src={foodimg4}
-                        alt="Sichuan Ban Mein"
-                        className="
-                          relative h-auto w-[260px] object-contain
-                          transition duration-500 ease-out
-                          group-hover:scale-110 group-hover:-rotate-2
+                      alt="Sichuan Ban Mein"
+                      className="
+                          lift-image relative h-auto w-[260px] object-contain
                           sm:w-[300px]
                           lg:w-[360px]
                         "
@@ -462,7 +462,11 @@ export default function MenuSection() {
             </div>
 
             {/* RIGHT STACKED CARD */}
-            <div className="lg:col-span-5 lg:pt-10">
+            <div
+              data-reveal
+              className="reveal-up lg:col-span-5 lg:pt-10"
+              style={{ "--reveal-delay": "140ms" } as CSSProperties}
+            >
               <div
                 className="
                   group relative overflow-hidden
@@ -483,14 +487,12 @@ export default function MenuSection() {
                 <div className="relative z-10 flex h-full flex-col items-center text-center">
                   <h3
                     className="
-                      leading-[0.98]
-                      text-[36px]
-                      sm:text-[42px]
-                      lg:text-[48px]
+                      display-font leading-[0.94]
+                      text-[48px]
+                      sm:text-[56px]
+                      lg:text-[64px]
                     "
                     style={{
-                      fontFamily: '"Albert Sans", sans-serif',
-                      fontWeight: 800,
                       color: "#312312",
                     }}
                   >
@@ -519,7 +521,8 @@ export default function MenuSection() {
                       </span>
                       <Image
                         src={soup}
-                        alt="soup icon"
+                        alt=""
+                        aria-hidden="true"
                         className="h-[24px] w-[24px] object-contain transition duration-300 group-hover:rotate-12 sm:h-[28px] sm:w-[28px]"
                       />
                     </div>
@@ -530,9 +533,7 @@ export default function MenuSection() {
                       src={foodimg5}
                       alt="Noodle Soup Bowl"
                       className="
-                        relative h-auto w-[230px] object-contain
-                        transition duration-500 ease-out
-                        group-hover:scale-110 group-hover:rotate-2
+                        lift-image relative h-auto w-[230px] object-contain
                         sm:w-[260px]
                         lg:w-[290px]
                       "

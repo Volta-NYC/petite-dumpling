@@ -12,7 +12,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="relative w-full overflow-hidden bg-[#050505] text-[#F7F1E8]">
+    <footer id="contact" className="relative w-full overflow-hidden bg-[#050505] text-[#F7F1E8]">
       {/* subtle top border glow */}
       <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-[#EDC301]/60 to-transparent" />
 
@@ -28,8 +28,7 @@ export default function Footer() {
             </p>
 
             <h2
-              className="mt-3 text-[38px] font-extrabold uppercase leading-[0.95] text-white sm:text-[48px] md:text-[58px] lg:text-[66px]"
-              style={{ fontFamily: "var(--font-archivo), sans-serif" }}
+              className="display-font mt-3 text-[48px] leading-[0.95] text-white sm:text-[62px] md:text-[76px] lg:text-[88px]"
             >
               We are open
               <br />
@@ -172,7 +171,7 @@ export default function Footer() {
             <div className="absolute inset-0 rounded-[34px] bg-[radial-gradient(circle_at_top,rgba(237,195,1,0.08),transparent_45%)]" />
             <Image
               src={title}
-              alt="Petite Dumpling title"
+              alt="Petite Dumpling"
               priority
               className="relative z-10 h-auto w-[260px] object-contain sm:w-[320px] md:w-[380px] lg:w-[430px]"
             />

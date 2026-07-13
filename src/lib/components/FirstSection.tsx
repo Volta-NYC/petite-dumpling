@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import backfirst from "@/assets/backfirst.png";
 import first from "@/assets/first.png";
 import second from "@/assets/second.png";
@@ -12,9 +13,10 @@ export default function FirstSection() {
         <div className="absolute inset-0">
           <Image
             src={backfirst}
-            alt="Section background"
+            alt=""
             fill
-            className="object-cover object-top"
+            data-parallax
+            className="parallax-layer object-cover object-top"
             priority={false}
           />
         </div>
@@ -38,7 +40,10 @@ export default function FirstSection() {
           "
         >
           {/* Left text */}
-          <div className="flex w-full max-w-[720px] flex-col items-start lg:w-[44%]">
+          <div
+            data-reveal
+            className="reveal-up flex w-full max-w-[720px] flex-col items-start lg:w-[44%]"
+          >
             <div
               className="
                 inline-flex items-center rounded-full
@@ -50,7 +55,7 @@ export default function FirstSection() {
               "
             >
               <span
-                className="text-[11px] uppercase tracking-[0.24em] sm:text-[12px]"
+                className="text-[11px] sm:text-[12px]"
                 style={{
                   color: "#908B83",
                   fontFamily: '"Albert Sans", sans-serif',
@@ -63,20 +68,18 @@ export default function FirstSection() {
 
             <h2
               className="
-                mt-5 uppercase leading-[0.95]
-                text-[44px]
-                sm:text-[56px]
-                md:text-[68px]
-                lg:text-[74px]
-                xl:text-[82px]
+                display-font mt-5 leading-[0.95]
+                text-[54px]
+                sm:text-[70px]
+                md:text-[86px]
+                lg:text-[94px]
+                xl:text-[104px]
               "
               style={{
                 color: "#312312",
-                fontFamily: "Montserrat, sans-serif",
-                fontWeight: 800,
               }}
             >
-              WELCOME!
+              Welcome!
             </h2>
 
             <p
@@ -93,23 +96,45 @@ export default function FirstSection() {
                 fontWeight: 400,
               }}
             >
-              In Petite Dumpling we serve dim sum, dumplings, and small plates all
-              day. Dim sum is a traditional Cantonese dish and refers to small,
-              bite-sized portions. The Chinese meaning of dim sum is commonly
-              translated to “touch the heart.”
-              <br />
-              <br />
-              It is basically a very decadent breakfast that served in steamer
-              baskets or on small plates, and is often pushed around in carts for
-              customers to order from. Carts differentiate steamed, baked, and
-              fried dishes that come with 3–4 pieces for everyone to share.
-              <br />
-              <br />
-              Dim sum go through many renaissance phases, especially in Hong Kong,
-              where dim sum is a popular and casual staple for any occasion.
-              Furthermore dishes expand to include many other regional cuisines;
-              fusion dishes such as bacon-wrap shrimp ball and mayo dipping sauce
-              are common.
+              At Petite Dumpling, dim sum, dumplings, and small plates happen all
+              day. Dim sum is a Cantonese tradition of bite-sized dishes, often
+              translated as food that can <strong className="font-extrabold text-[#312312]">touch the heart</strong>.
+            </p>
+
+            <div
+              className="
+                mt-5 max-w-[560px] border-l-[5px] border-[#C92F28]
+                bg-white/54 px-5 py-4 text-[#312312]
+                shadow-[0_14px_30px_rgba(49,35,18,0.07)]
+                backdrop-blur-md
+              "
+            >
+              <p
+                className="display-font text-[28px] leading-[1.05] sm:text-[34px]"
+              >
+                Steamed, fried, baked, shared. That is the whole point.
+              </p>
+            </div>
+
+            <p
+              className="
+                mt-5 max-w-[560px]
+                text-[15px] leading-[1.34]
+                sm:text-[17px]
+                md:text-[19px]
+                lg:text-[21px]
+              "
+              style={{
+                color: "#6F675F",
+                fontFamily: '"Albert Sans", sans-serif',
+                fontWeight: 400,
+              }}
+            >
+              Some dishes arrive in steamer baskets, others on small plates, and
+              the best order is usually the one everybody reaches across the
+              table for. Hong Kong dim sum keeps evolving, so we let the menu be
+              playful too: classic dumplings, saucy noodles, and a few house
+              twists that refuse to sit quietly.
             </p>
 
             {/* little info pills */}
@@ -153,9 +178,10 @@ export default function FirstSection() {
               </div>
             </div>
 
-            <button
+            <a
+              href="#order"
               className="
-                group relative mt-6 inline-flex items-center gap-3 overflow-hidden
+                cta-sweep group relative mt-6 inline-flex min-h-[48px] items-center gap-3 overflow-hidden
                 rounded-full px-7 py-3
                 text-[14px]
                 sm:text-[15px]
@@ -167,20 +193,23 @@ export default function FirstSection() {
               style={{
                 backgroundColor: "#F7CDC4",
                 color: "#FFFFFF",
-                fontFamily: "Montserrat, sans-serif",
+                fontFamily: "var(--font-albert-sans), sans-serif",
                 fontWeight: 800,
               }}
             >
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition duration-700 group-hover:translate-x-full" />
               <span className="relative z-10">PLACE AN ORDER</span>
               <span className="relative z-10 text-[20px] leading-none sm:text-[22px]">
                 ›
               </span>
-            </button>
+            </a>
           </div>
 
           {/* Right image */}
-          <div className="flex w-full justify-center lg:w-[56%] lg:justify-end">
+          <div
+            data-reveal
+            className="reveal-up flex w-full justify-center lg:w-[56%] lg:justify-end"
+            style={{ "--reveal-delay": "120ms" } as CSSProperties}
+          >
             <div
               className="
                 group relative w-full
@@ -236,11 +265,9 @@ export default function FirstSection() {
                 <div className="absolute inset-0 rounded-[30px] bg-[linear-gradient(to_bottom_right,rgba(255,255,255,0.18),transparent_45%)]" />
                 <Image
                   src={first}
-                  alt="Dim sum"
+                  alt="Assorted dim sum served at Petite Dumpling"
                   className="
-                    relative z-10 h-auto w-full object-contain
-                    transition duration-500 ease-out
-                    group-hover:scale-[1.03]
+                    lift-image relative z-10 h-auto w-full object-contain
                   "
                 />
               </div>
@@ -270,7 +297,10 @@ export default function FirstSection() {
           "
         >
           {/* LEFT IMAGE */}
-          <div className="flex w-full justify-center lg:w-[54%] lg:justify-start">
+          <div
+            data-reveal
+            className="reveal-up flex w-full justify-center lg:w-[54%] lg:justify-start"
+          >
             <div
               className="
                 group relative w-full
@@ -297,11 +327,9 @@ export default function FirstSection() {
               >
                 <Image
                   src={second}
-                  alt="Dim sum second"
+                  alt="Fresh dim sum platter with dipping sauce"
                   className="
-                    h-auto w-full object-contain
-                    transition duration-500 ease-out
-                    group-hover:scale-[1.03]
+                    lift-image h-auto w-full object-contain
                   "
                 />
               </div>
@@ -309,11 +337,15 @@ export default function FirstSection() {
           </div>
 
           {/* RIGHT TEXT */}
-          <div className="flex w-full max-w-[720px] flex-col items-start lg:w-[46%]">
+          <div
+            data-reveal
+            className="reveal-up flex w-full max-w-[720px] flex-col items-start lg:w-[46%]"
+            style={{ "--reveal-delay": "120ms" } as CSSProperties}
+          >
             <div
               className="
-                rounded-[32px] border-[4px]
-                bg-[rgba(255,255,255,0.42)]
+                rounded-[28px] border-[4px]
+                bg-[rgba(255,255,255,0.56)]
                 px-6 py-8
                 shadow-[0_18px_45px_rgba(49,35,18,0.08)]
                 backdrop-blur-md
@@ -335,7 +367,7 @@ export default function FirstSection() {
                 }}
               >
                 <span
-                  className="text-[13px] sm:text-[14px]"
+                  className="text-[13px] font-extrabold sm:text-[14px]"
                   style={{
                     color: "#908B83",
                     fontFamily: '"Albert Sans", sans-serif',
@@ -349,21 +381,26 @@ export default function FirstSection() {
               <p
                 className="
                   max-w-[560px]
-                  text-[24px] leading-[1.22]
-                  sm:text-[27px]
-                  md:text-[29px]
-                  lg:text-[31px]
+                  display-font text-[34px] leading-[1.08]
+                  sm:text-[40px]
+                  md:text-[44px]
+                  lg:text-[48px]
                 "
                 style={{
-                  color: "#908B83",
-                  fontFamily: '"Albert Sans", sans-serif',
-                  fontWeight: 400,
+                  color: "#312312",
                 }}
               >
                 “Embrace the fiery energy of the Year of the Red Horse, marked by
                 bold actions and rapid progress. Balance with self-care to avoid
                 burnout. It promises breakthroughs and demands wise leadership to
                 harness its energy.”
+              </p>
+              <p
+                className="mt-5 text-[15px] leading-[1.4] text-[#6F675F] sm:text-[17px]"
+                style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}
+              >
+                A little chef-note energy for the table: bold moves, steady hands,
+                and enough chili oil to make the noodles wake up.
               </p>
             </div>
           </div>

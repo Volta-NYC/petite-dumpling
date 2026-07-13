@@ -8,9 +8,11 @@ import Link from "next/link";
 export default function Header() {
   return (
     <section className="relative min-h-screen w-full overflow-hidden">
+      <h1 className="sr-only">Petite Dumpling handcrafted dumplings in Brooklyn</h1>
       {/* Background for sm/md */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat lg:hidden"
+        data-parallax
+        className="parallax-layer absolute inset-0 bg-cover bg-center bg-no-repeat lg:hidden"
         style={{
           backgroundImage: `url(${headerBack.src})`,
         }}
@@ -20,9 +22,10 @@ export default function Header() {
       <div className="hidden lg:block w-full">
         <Image
           src={headerBack}
-          alt="Header background"
+          alt=""
           priority
-          className="h-auto w-full object-contain"
+          data-parallax
+          className="parallax-layer h-auto w-full object-contain"
         />
       </div>
 
@@ -34,7 +37,7 @@ export default function Header() {
   {/* Glow layer */}
   <Image
     src={letters}
-    alt="Petite Dumpling symbol glow"
+    alt=""
     priority
     aria-hidden="true"
     className="
@@ -51,8 +54,9 @@ export default function Header() {
   {/* Main symbol */}
   <Image
     src={letters}
-    alt="Petite Dumpling symbol"
+    alt=""
     priority
+    aria-hidden="true"
     className="
       chinese-symbol-main
       relative
@@ -87,13 +91,14 @@ export default function Header() {
            <Link href="https://www.grubhub.com/restaurant/petite-dumpling-276-5th-avenue-ste-a-brooklyn/4840112?classicAffiliateId=%2Fr%2Fw%2F4840112%2F&utm_source=internal.restaurant.grubhub.com&utm_medium=OOL&utm_campaign=order%20online&utm_content=4840112">
             <button
               className="
+                cta-sweep
                 flex items-center justify-center gap-2
                 rounded-full bg-[#EDC301] text-white
-                h-[44px] min-w-[150px] px-5
+                h-[48px] min-w-[150px] px-5
                 md:h-[48px] md:min-w-[165px]
                 lg:h-[56px] lg:min-w-[180px] lg:px-8
                 shadow-[0_10px_28px_rgba(237,195,1,0.18)]
-                transition duration-200 hover:scale-[1.02]
+                transition duration-200 hover:scale-[1.03]
               "
             >
               <span
@@ -109,7 +114,8 @@ export default function Header() {
 
               <Image
                 src={deliveryLogo}
-                alt="Delivery icon"
+                alt=""
+                aria-hidden="true"
                 width={20}
                 height={20}
                 className="object-contain md:h-[20px] md:w-[20px] lg:h-[34px] lg:w-[34px]"
@@ -119,15 +125,16 @@ export default function Header() {
 <Link href ="https://order.snackpass.co/673beea78cacfab5b17d4e88?utm_source=qr">
             <button
               className="
+                cta-sweep
                 flex items-center justify-center gap-2
                 rounded-full border border-[#FFEB8D]
                 bg-[rgba(255,255,255,0.05)] text-[#FFEB8D]
-                h-[44px] min-w-[150px] px-5
+                h-[48px] min-w-[150px] px-5
                 md:h-[48px] md:min-w-[165px]
                 lg:h-[56px] lg:min-w-[180px] lg:px-8
                 backdrop-blur-[8px]
                 shadow-[inset_0_1px_0_rgba(255,255,255,0.14)]
-                transition duration-200 hover:scale-[1.02] hover:bg-[rgba(255,255,255,0.08)]
+                transition duration-200 hover:scale-[1.03] hover:bg-[rgba(255,255,255,0.08)]
               "
             >
               <span
@@ -143,7 +150,8 @@ export default function Header() {
 
               <Image
                 src={arrowLogo}
-                alt="Arrow icon"
+                alt=""
+                aria-hidden="true"
                 width={18}
                 height={18}
                 className="h-[14px] w-[14px] object-contain md:h-[16px] md:w-[16px] lg:h-[20px] lg:w-[20px] lg:ml-1"

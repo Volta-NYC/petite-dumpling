@@ -20,10 +20,8 @@ export default function MenuPosterSection() {
         backgroundSize: "cover",
       }}
     >
-      {/* soft overlay so text reads better */}
       <div className="absolute inset-0 bg-[rgba(244,233,226,0.78)]" />
 
-      {/* extra glows */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-[8%] top-[12%] h-40 w-40 rounded-full bg-[#F9C0B7]/20 blur-3xl sm:h-56 sm:w-56" />
         <div className="absolute right-[8%] top-[20%] h-44 w-44 rounded-full bg-[#FFEB8D]/20 blur-3xl sm:h-64 sm:w-64" />
@@ -31,144 +29,38 @@ export default function MenuPosterSection() {
       </div>
 
       <div className="relative z-10 mx-auto flex w-full max-w-[1500px] flex-col items-center">
-        {/* heading */}
-        <div className="text-center">
-          <p
-            className="
-              text-[14px] uppercase tracking-[0.35em]
-              sm:text-[15px]
-            "
-            style={{
-              fontFamily: '"Albert Sans", sans-serif',
-              fontWeight: 800,
-              color: "#908B83",
-            }}
-          >
+        <div data-reveal className="reveal-up text-center">
+          <p className="text-[14px] font-extrabold text-[#2F7D63] sm:text-[15px]">
             handcrafted favorites
           </p>
 
-          <h2
-            className="
-              mt-3 leading-none
-              text-[52px]
-              sm:text-[72px]
-              md:text-[92px]
-              lg:text-[116px]
-            "
-            style={{
-              fontFamily: "Montserrat, sans-serif",
-              fontWeight: 800,
-              color: "#312312",
-            }}
-          >
-            MENU
+          <h2 className="display-font mt-2 text-[62px] leading-none text-[#312312] sm:text-[84px] md:text-[104px] lg:text-[128px]">
+            Full Menu
           </h2>
 
-          <p
-            className="
-              mx-auto mt-5 max-w-[860px]
-              text-center leading-[1.3]
-              text-[16px]
-              sm:text-[18px]
-              md:text-[22px]
-              lg:text-[24px]
-            "
-            style={{
-              fontFamily: '"Albert Sans", sans-serif',
-              fontWeight: 400,
-              color: "#908B83",
-            }}
-          >
-            Explore our full spread of dumplings, noodles, soups, and small
-            plates, all gathered into one illustrated menu with playful details
-            and bold flavor.
+          <p className="mx-auto mt-4 max-w-[820px] text-center text-[16px] leading-[1.4] text-[#6F675F] sm:text-[18px] md:text-[21px]">
+            Dumplings, noodles, soups, small plates, and chef specials all on
+            the original illustrated menu.
           </p>
         </div>
 
-        {/* accent pills */}
-        <div
-          className="
-            mt-8 flex flex-wrap items-center justify-center gap-3
-            sm:mt-10 sm:gap-4
-          "
-        >
-          <div
-            className="rounded-full border-[3px] px-4 py-2 sm:px-5"
-            style={{ borderColor: "#F9C0B7", backgroundColor: "#FFD9CF" }}
-          >
-            <span
-              className="text-[14px] sm:text-[16px]"
-              style={{
-                fontFamily: '"Albert Sans", sans-serif',
-                fontWeight: 800,
-                color: "#908B83",
-              }}
-            >
-              dim sum classics
-            </span>
-          </div>
-
-          <div
-            className="rounded-full border-[3px] px-4 py-2 sm:px-5"
-            style={{ borderColor: "#FFD202", backgroundColor: "#FFEB8D" }}
-          >
-            <span
-              className="text-[14px] sm:text-[16px]"
-              style={{
-                fontFamily: '"Albert Sans", sans-serif',
-                fontWeight: 800,
-                color: "#908B83",
-              }}
-            >
-              noodles + soups
-            </span>
-          </div>
-
-          <div
-            className="rounded-full border-[3px] px-4 py-2 sm:px-5"
-            style={{ borderColor: "#EDC301", backgroundColor: "#FFF8D2" }}
-          >
-            <span
-              className="text-[14px] sm:text-[16px]"
-              style={{
-                fontFamily: '"Albert Sans", sans-serif',
-                fontWeight: 800,
-                color: "#908B83",
-              }}
-            >
-              chef specials
-            </span>
-          </div>
-        </div>
-
-        {/* main poster area */}
-        <div
-          className="
-            relative mt-10 w-full
-            sm:mt-12
-            lg:mt-14
-          "
-        >
-          {/* outer glow frame */}
+        <div data-reveal className="reveal-up relative mt-10 w-full sm:mt-12 lg:mt-14">
           <div className="absolute inset-0 mx-auto w-[92%] max-w-[1100px] rounded-[38px] bg-[rgba(255,255,255,0.22)] blur-3xl" />
 
           <div
             className="
               relative mx-auto w-full max-w-[1120px]
-              rounded-[32px] border-[4px]
+              rounded-[28px] border-[4px]
               bg-[rgba(255,255,255,0.32)]
               p-3
               shadow-[0_25px_70px_rgba(49,35,18,0.16)]
               backdrop-blur-md
-              sm:rounded-[36px] sm:p-4
+              sm:p-4
               md:p-5
-              lg:rounded-[40px] lg:p-6
+              lg:p-6
             "
-            style={{
-              borderColor: "#F9C0B7",
-            }}
+            style={{ borderColor: "#F9C0B7" }}
           >
-            {/* top badge */}
             <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
               <div
                 className="rounded-full border-[3px] px-5 py-2 shadow-sm"
@@ -177,52 +69,29 @@ export default function MenuPosterSection() {
                   backgroundColor: "#FFEB8D",
                 }}
               >
-                <span
-                  className="text-[14px] sm:text-[15px]"
-                  style={{
-                    fontFamily: '"Albert Sans", sans-serif',
-                    fontWeight: 800,
-                    color: "#312312",
-                  }}
-                >
+                <span className="text-[14px] font-extrabold text-[#312312] sm:text-[15px]">
                   full restaurant menu
                 </span>
               </div>
             </div>
 
-            {/* poster */}
-            <div
-              className="
-                group relative overflow-hidden rounded-[24px]
-                bg-[#F2E9E2]
-                p-2
-                sm:rounded-[28px] sm:p-3
-                md:p-4
-              "
-            >
-              <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100">
-                <div className="absolute left-[12%] top-[12%] h-28 w-28 rounded-full bg-[#FFEB8D]/20 blur-2xl" />
-                <div className="absolute bottom-[10%] right-[10%] h-36 w-36 rounded-full bg-[#F9C0B7]/20 blur-3xl" />
-              </div>
-
+            <div className="group relative overflow-hidden rounded-[20px] bg-[#F2E9E2] p-2 sm:p-3 md:p-4">
               <Image
                 src={menuImg}
-                alt="Petite Dumpling full menu"
+                alt="Petite Dumpling full restaurant menu with dim sum, soup dumplings, bao, noodles, soups, small platters, big platters, congee, sides, tea, and toppings."
                 priority={false}
                 className="
-                  relative z-10 h-auto w-full rounded-[18px] object-contain
-                  transition duration-500 ease-out
-                  group-hover:scale-[1.01]
+                  lift-image relative z-10 h-auto w-full rounded-[16px] object-contain
                 "
               />
             </div>
           </div>
         </div>
 
-        {/* bottom helper text */}
-        <div className="mt-8 text-center sm:mt-10">
-
-        </div>
+        <p className="mt-8 max-w-[760px] text-center text-[14px] leading-[1.45] text-[#6F675F] sm:text-[15px]">
+          Please tell us your allergies. Some dishes contain peanuts and sesame.
+          Mala means spicy sauce made with Sichuan peppercorns.
+        </p>
       </div>
     </section>
   );
