@@ -149,6 +149,7 @@ export default function MenuSection() {
           "
         >
           <h2
+            data-auto-reveal
             className="
               display-font text-center leading-none
               text-[58px]
@@ -164,6 +165,7 @@ export default function MenuSection() {
           </h2>
 
           <div
+            data-auto-reveal
             className="
               relative mt-8 w-full max-w-[1120px]
               rounded-[38px] border-[6px]
@@ -235,6 +237,7 @@ export default function MenuSection() {
           "
         >
           <h2
+            data-auto-reveal
             className="
               display-font text-center leading-none
               text-[50px]
@@ -250,6 +253,7 @@ export default function MenuSection() {
           </h2>
 
           <div
+            data-auto-reveal
             className="
               mt-8 inline-flex items-center rounded-[16px]
               border-[4px] px-5 py-2
@@ -329,6 +333,7 @@ export default function MenuSection() {
           "
         >
           <div
+            data-auto-reveal
             className="
               inline-flex items-center rounded-[18px]
               border-[4px] px-5 py-2

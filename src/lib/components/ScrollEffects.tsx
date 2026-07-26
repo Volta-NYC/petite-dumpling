@@ -4,9 +4,28 @@ import { useEffect } from "react";
 
 export default function ScrollEffects() {
   useEffect(() => {
-    const revealItems = Array.from(
-      document.querySelectorAll<HTMLElement>("[data-reveal]")
+    const autoRevealItems = Array.from(
+      document.querySelectorAll<HTMLElement>("[data-auto-reveal], [data-footer-reveal]")
     );
+    autoRevealItems.forEach((item, index) => {
+      item.dataset.reveal = "true";
+      item.classList.add("reveal-up");
+      if (!item.style.getPropertyValue("--reveal-delay")) {
+        item.style.setProperty("--reveal-delay", `${Math.min(index * 70, 280)}ms`);
+      }
+    });
+
+    const revealItems = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
+    revealItems.forEach((item, index) => {
+      if (
+        !item.classList.contains("reveal-up") &&
+        !item.classList.contains("reveal-scale") &&
+        !item.classList.contains("reveal-left") &&
+        !item.classList.contains("reveal-right")
+      ) {
+        item.classList.add(index % 3 === 0 ? "reveal-scale" : "reveal-up");
+      }
+    });
 
     const observer = new IntersectionObserver(
       (entries) => {

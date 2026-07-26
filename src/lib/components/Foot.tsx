@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import title from "@/assets/title.png";
 import {
   Phone,
@@ -7,9 +8,15 @@ import {
   Globe,
   Instagram,
   Facebook,
-  Music2,
+  Navigation,
+  Sparkles,
 } from "lucide-react";
-import { LOCATIONS, RESTAURANT_EMAIL, RESTAURANT_WEBSITE } from "@/lib/restaurantInfo";
+import {
+  LOCATIONS,
+  RESTAURANT_EMAIL,
+  RESTAURANT_WEBSITE,
+  SOCIAL_LINKS,
+} from "@/lib/restaurantInfo";
 
 export default function Footer() {
   return (
@@ -19,7 +26,7 @@ export default function Footer() {
 
       <div className="mx-auto flex max-w-[1600px] flex-col gap-12 px-6 py-12 sm:px-10 md:px-14 lg:flex-row lg:items-center lg:justify-between lg:gap-16 lg:px-20 lg:py-16">
         {/* LEFT */}
-        <div className="flex-1">
+        <div data-footer-reveal className="reveal-up flex-1">
           <div className="max-w-[760px]">
             <p
               className="text-[13px] uppercase tracking-[0.35em] text-[#EDC301] sm:text-[14px]"
@@ -44,7 +51,7 @@ export default function Footer() {
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-[26px] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
+              <div data-reveal className="reveal-up rounded-[26px] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
                 <div className="flex items-start gap-4">
                   <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#EDC301] text-black">
                     <Phone size={20} strokeWidth={2.4} />
@@ -69,7 +76,7 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="rounded-[26px] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
+              <div data-reveal className="reveal-up rounded-[26px] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
                 <div className="flex items-start gap-4">
                   <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#EDC301] text-black">
                     <Mail size={20} strokeWidth={2.4} />
@@ -91,7 +98,7 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="rounded-[26px] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm sm:col-span-2">
+              <div data-reveal className="reveal-up rounded-[26px] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm sm:col-span-2">
                 <div className="flex items-start gap-4">
                   <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#EDC301] text-black">
                     <MapPin size={20} strokeWidth={2.4} />
@@ -120,6 +127,15 @@ export default function Footer() {
                             ))}
                           </p>
                           <p className="mt-1 text-[15px] text-[#CBB98C]">{location.hours}</p>
+                          <a
+                            href={location.mapsUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="mt-3 inline-flex items-center gap-2 rounded-full border border-[#EDC301]/30 px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.08em] text-[#EDC301] transition hover:bg-[#EDC301] hover:text-black"
+                          >
+                            <Navigation size={14} />
+                            Directions
+                          </a>
                         </div>
                       ))}
                     </div>
@@ -127,7 +143,7 @@ export default function Footer() {
                 </div>
               </div>
 
-              <div className="rounded-[26px] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm sm:col-span-2">
+              <div data-reveal className="reveal-up rounded-[26px] border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm sm:col-span-2">
                 <div className="flex items-start gap-4">
                   <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#EDC301] text-black">
                     <Globe size={20} strokeWidth={2.4} />
@@ -154,35 +170,48 @@ export default function Footer() {
             </div>
 
             {/* socials */}
-            <div className="mt-8 flex flex-wrap items-center gap-3">
+            <div
+              data-reveal
+              className="reveal-up mt-8 rounded-[8px] border border-[#EDC301]/25 bg-[#EDC301]/10 p-5 shadow-[0_18px_50px_rgba(237,195,1,0.12)]"
+            >
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <p className="flex items-center gap-2 text-[13px] font-extrabold uppercase tracking-[0.22em] text-[#EDC301]">
+                    <Sparkles size={16} />
+                    Follow us
+                  </p>
+                  <p className="mt-2 text-[20px] font-extrabold text-white sm:text-[24px]">
+                    Fresh dumpling drops, menu moments, and neighborhood updates.
+                  </p>
+                </div>
+              </div>
+
+            <div className="mt-5 flex flex-wrap items-center gap-3">
               <a
-                href="https://www.instagram.com/petitedumpling/?igshid=YmMyMTA2M2Y%3D"
+                href={SOCIAL_LINKS.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-[#F7F1E8] text-black transition duration-200 hover:scale-[1.06] hover:bg-[#EDC301]"
+                className="social-pop flex min-h-[58px] items-center gap-3 rounded-full border border-white/10 bg-[#F7F1E8] px-5 text-black transition duration-200 hover:scale-[1.04] hover:bg-[#EDC301]"
               >
                 <Instagram size={20} />
+                <span className="text-[15px] font-extrabold">Instagram</span>
               </a>
               <a
-                href="https://www.facebook.com/people/Petite-Dumpling/100087060717669/"
+                href={SOCIAL_LINKS.facebook}
                 target="_blank"
                 rel="noreferrer"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-[#F7F1E8] text-black transition duration-200 hover:scale-[1.06] hover:bg-[#EDC301]"
+                className="social-pop flex min-h-[58px] items-center gap-3 rounded-full border border-white/10 bg-[#F7F1E8] px-5 text-black transition duration-200 hover:scale-[1.04] hover:bg-[#EDC301]"
               >
                 <Facebook size={20} />
+                <span className="text-[15px] font-extrabold">Facebook</span>
               </a>
-              <a
-                href="#"
-                className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-[#F7F1E8] text-black transition duration-200 hover:scale-[1.06] hover:bg-[#EDC301]"
-              >
-                <Music2 size={20} />
-              </a>
+            </div>
             </div>
           </div>
         </div>
 
         {/* RIGHT */}
-        <div className="flex flex-1 items-center justify-center lg:justify-end">
+        <div data-footer-reveal className="reveal-up flex flex-1 items-center justify-center lg:justify-end">
           <div className="relative flex w-full max-w-[520px] items-center justify-center rounded-[34px] border border-[#EDC301]/15 bg-gradient-to-br from-[#151515] to-[#090909] p-8 shadow-[0_20px_80px_rgba(0,0,0,0.45)]">
             <div className="absolute inset-0 rounded-[34px] bg-[radial-gradient(circle_at_top,rgba(237,195,1,0.08),transparent_45%)]" />
             <Image
@@ -193,6 +222,44 @@ export default function Footer() {
             />
           </div>
         </div>
+      </div>
+
+      <div className="mx-auto grid max-w-[1600px] gap-5 px-6 pb-12 sm:px-10 md:px-14 lg:grid-cols-2 lg:px-20">
+        {LOCATIONS.map((location, index) => (
+          <div
+            key={location.id}
+            data-reveal
+            className="reveal-up overflow-hidden rounded-[8px] border border-white/12 bg-white/[0.04] shadow-[0_24px_70px_rgba(0,0,0,0.32)]"
+            style={{ "--reveal-delay": `${index * 120}ms` } as CSSProperties}
+          >
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 px-5 py-4">
+              <div>
+                <p className="text-[12px] font-extrabold uppercase tracking-[0.22em] text-[#EDC301]">
+                  Google Maps
+                </p>
+                <h3 className="mt-1 text-[20px] font-extrabold text-white">
+                  {location.name}
+                </h3>
+              </div>
+              <a
+                href={location.mapsUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-h-[40px] items-center gap-2 rounded-full bg-[#EDC301] px-4 text-[13px] font-extrabold text-black transition hover:scale-[1.04]"
+              >
+                <Navigation size={15} />
+                Open map
+              </a>
+            </div>
+            <iframe
+              title={`${location.name} Google Map`}
+              src={location.mapsEmbedUrl}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="h-[260px] w-full border-0 sm:h-[320px]"
+            />
+          </div>
+        ))}
       </div>
 
       {/* bottom */}

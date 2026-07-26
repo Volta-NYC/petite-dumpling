@@ -13,6 +13,11 @@ export const MENU_LINKS = {
 export const RESTAURANT_EMAIL = "petitedumpling276@gmail.com";
 export const RESTAURANT_WEBSITE = "petitedumpling.com";
 
+export const SOCIAL_LINKS = {
+  instagram: "https://www.instagram.com/petitedumpling/?igshid=YmMyMTA2M2Y%3D",
+  facebook: "https://www.facebook.com/people/Petite-Dumpling/100087060717669/",
+};
+
 export const LOCATIONS = [
   {
     id: "park-slope",
@@ -25,6 +30,10 @@ export const LOCATIONS = [
     pickupUrl: ORDER_LINKS.parkSlopePickup,
     deliveryUrl: ORDER_LINKS.parkSlopeDelivery,
     menuUrl: MENU_LINKS.parkSlope,
+    mapsEmbedUrl:
+      "https://www.google.com/maps?q=276%205th%20Avenue%2C%20Brooklyn%2C%20NY%2011215&output=embed",
+    mapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=276%205th%20Avenue%2C%20Brooklyn%2C%20NY%2011215",
   },
   {
     id: "prospect-heights",
@@ -37,5 +46,9 @@ export const LOCATIONS = [
     pickupUrl: ORDER_LINKS.prospectHeightsPickup,
     deliveryUrl: "",
     menuUrl: MENU_LINKS.prospectHeights,
+    mapsEmbedUrl:
+      "https://www.google.com/maps?q=770%20Washington%20Ave%2C%20Brooklyn%2C%20NY%2011238&output=embed",
+    mapsUrl:
+      "https://www.google.com/maps/search/?api=1&query=770%20Washington%20Ave%2C%20Brooklyn%2C%20NY%2011238",
   },
 ] as const;

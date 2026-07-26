@@ -230,6 +230,7 @@ export default function OrderFeaturesSection() {
           "
         >
           <h2
+            data-auto-reveal
             className="
               display-font text-center leading-none
               text-[56px]
@@ -244,7 +245,7 @@ export default function OrderFeaturesSection() {
             Order Online
           </h2>
 
-          <p className="mt-3 max-w-[760px] text-center text-[16px] leading-[1.42] text-[#908B83] sm:text-[19px] md:text-[22px] lg:text-[24px]">
+          <p data-auto-reveal className="mt-3 max-w-[760px] text-center text-[16px] leading-[1.42] text-[#908B83] sm:text-[19px] md:text-[22px] lg:text-[24px]">
             Park Slope is open for pickup and delivery. Prospect Heights is now
             open for pickup only.
           </p>
@@ -256,7 +257,10 @@ export default function OrderFeaturesSection() {
               lg:mt-14 lg:grid-cols-3
             "
           >
-            <div className="flex flex-col items-center rounded-[8px] border-[4px] border-[#EDC301] bg-white/48 p-6 shadow-[0_18px_45px_rgba(49,35,18,0.08)] backdrop-blur-md">
+            <div
+              data-reveal
+              className="reveal-scale flex flex-col items-center rounded-[8px] border-[4px] border-[#EDC301] bg-white/48 p-6 shadow-[0_18px_45px_rgba(49,35,18,0.08)] backdrop-blur-md"
+            >
               <div className="group relative">
                 <div className="absolute inset-0 scale-90 rounded-full bg-[#FFD202]/25 blur-3xl" />
                 <Image
@@ -301,7 +305,11 @@ export default function OrderFeaturesSection() {
   </a>
             </div>
 
-            <div className="flex flex-col items-center rounded-[8px] border-[4px] border-[#F9C0B7] bg-white/48 p-6 shadow-[0_18px_45px_rgba(49,35,18,0.08)] backdrop-blur-md">
+            <div
+              data-reveal
+              className="reveal-scale flex flex-col items-center rounded-[8px] border-[4px] border-[#F9C0B7] bg-white/48 p-6 shadow-[0_18px_45px_rgba(49,35,18,0.08)] backdrop-blur-md"
+              style={{ "--reveal-delay": "120ms" } as CSSProperties}
+            >
               <div className="group relative">
                 <div className="absolute inset-0 scale-90 rounded-full bg-[#F9C0B7]/25 blur-3xl" />
                 <Image
@@ -346,7 +354,11 @@ export default function OrderFeaturesSection() {
               </a>
             </div>
 
-            <div className="flex flex-col items-center rounded-[8px] border-[4px] border-[#2F7D63] bg-white/48 p-6 shadow-[0_18px_45px_rgba(49,35,18,0.08)] backdrop-blur-md">
+            <div
+              data-reveal
+              className="reveal-scale flex flex-col items-center rounded-[8px] border-[4px] border-[#2F7D63] bg-white/48 p-6 shadow-[0_18px_45px_rgba(49,35,18,0.08)] backdrop-blur-md"
+              style={{ "--reveal-delay": "240ms" } as CSSProperties}
+            >
               <div className="group relative">
                 <div className="absolute inset-0 scale-90 rounded-full bg-[#2F7D63]/20 blur-3xl" />
                 <Image
@@ -392,7 +404,7 @@ export default function OrderFeaturesSection() {
             </div>
           </div>
 
-          <div className="mt-8 grid w-full max-w-[780px] gap-3 sm:grid-cols-2">
+          <div data-auto-reveal className="mt-8 grid w-full max-w-[780px] gap-3 sm:grid-cols-2">
             {LOCATIONS.map((location) => (
               <a
                 key={location.id}
@@ -458,6 +470,7 @@ export default function OrderFeaturesSection() {
           "
         >
           <h2
+            data-auto-reveal
             className="
               display-font text-center leading-none
               text-[54px]
@@ -472,7 +485,7 @@ export default function OrderFeaturesSection() {
             More Handmade Favorites
           </h2>
 
-          <p className="mx-auto mt-4 max-w-[760px] text-center text-[16px] leading-[1.4] text-[#6F675F] sm:text-[18px]">
+          <p data-auto-reveal className="mx-auto mt-4 max-w-[760px] text-center text-[16px] leading-[1.4] text-[#6F675F] sm:text-[18px]">
             A few deeper-cut dishes from the full menu, framed with the same care
             as the featured cards above.
           </p>

@@ -126,9 +126,43 @@ body {
   transition-delay: var(--reveal-delay, 0ms);
 }
 
-.reveal-up.is-visible {
+.reveal-scale,
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 700ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal-scale {
+  filter: blur(8px);
+  transform: translateY(26px) scale(0.96);
+}
+
+.reveal-left {
+  transform: translateX(-34px);
+}
+
+.reveal-right {
+  transform: translateX(34px);
+}
+
+.reveal-up.is-visible,
+.reveal-scale.is-visible,
+.reveal-left.is-visible,
+.reveal-right.is-visible {
   opacity: 1;
+  filter: blur(0);
   transform: translateY(0);
+}
+
+.reveal-left.is-visible,
+.reveal-right.is-visible {
+  transform: translateX(0);
 }
 
 .parallax-layer {
@@ -179,6 +213,21 @@ body {
 
 .review-card {
   min-height: 265px;
+}
+
+.social-pop {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.social-pop::after {
+  position: absolute;
+  inset: 5px;
+  z-index: -1;
+  content: "";
+  border-radius: inherit;
+  border: 1px solid rgba(49, 35, 18, 0.16);
 }
 
 .chinese-symbol-wrap {
@@ -322,6 +371,14 @@ body {
 
   .reveal-up {
     opacity: 1;
+    transform: none;
+  }
+
+  .reveal-scale,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1;
+    filter: none;
     transform: none;
   }
 
