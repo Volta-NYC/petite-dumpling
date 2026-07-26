@@ -180,75 +180,68 @@ export default function Footer() {
             <article
               key={location.id}
               data-reveal
-              className="reveal-up rounded-[8px] border border-white/10 bg-white/[0.05] p-6 backdrop-blur-sm"
+              className="reveal-up overflow-hidden rounded-[8px] border border-white/12 bg-white/[0.05] shadow-[0_24px_70px_rgba(0,0,0,0.32)] backdrop-blur-sm"
               style={{ "--reveal-delay": `${index * 100}ms` } as CSSProperties}
             >
-              <p className="text-[13px] font-extrabold uppercase tracking-[0.24em] text-[#EDC301]">
-                {location.status}
-              </p>
-              <div className="mt-3 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-                <div>
-                  <h3 className="display-font text-[44px] leading-none text-white sm:text-[56px]">
-                    {location.name}
-                  </h3>
-                  <p className="mt-3 text-[18px] font-semibold uppercase leading-[1.45] text-[#FFF8E7]">
-                    {location.addressLines.map((line) => (
-                      <span key={line} className="block">
-                        {line}
-                      </span>
-                    ))}
-                  </p>
-                  <p className="mt-2 text-[16px] text-[#CBB98C]">{location.hours}</p>
+              <div className="p-6">
+                <p className="text-[13px] font-extrabold uppercase tracking-[0.24em] text-[#EDC301]">
+                  {location.status}
+                </p>
+                <div className="mt-3 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <h3 className="display-font text-[44px] leading-none text-white sm:text-[56px]">
+                      {location.name}
+                    </h3>
+                    <p className="mt-3 text-[18px] font-semibold uppercase leading-[1.45] text-[#FFF8E7]">
+                      {location.addressLines.map((line) => (
+                        <span key={line} className="block">
+                          {line}
+                        </span>
+                      ))}
+                    </p>
+                    <p className="mt-2 text-[16px] text-[#CBB98C]">{location.hours}</p>
+                  </div>
+                  <a
+                    href={location.mapsUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-h-[46px] w-fit items-center gap-2 rounded-full bg-[#EDC301] px-5 text-[14px] font-extrabold uppercase tracking-[0.08em] text-black transition hover:scale-[1.04]"
+                  >
+                    <Navigation size={16} />
+                    Directions
+                  </a>
                 </div>
-                <a
-                  href={location.mapsUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex min-h-[46px] w-fit items-center gap-2 rounded-full border border-[#EDC301]/35 px-5 text-[14px] font-extrabold uppercase tracking-[0.08em] text-[#EDC301] transition hover:bg-[#EDC301] hover:text-black"
-                >
-                  <Navigation size={16} />
-                  Directions
-                </a>
+              </div>
+
+              <div className="border-t border-white/10">
+                <div className="flex flex-wrap items-center justify-between gap-3 px-6 py-4">
+                  <div>
+                    <p className="text-[12px] font-extrabold uppercase tracking-[0.22em] text-[#EDC301]">
+                      Google Maps
+                    </p>
+                    <h4 className="mt-1 text-[20px] font-extrabold text-white">
+                      {location.name}
+                    </h4>
+                  </div>
+                  <a
+                    href={location.mapsUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-h-[40px] items-center gap-2 rounded-full border border-[#EDC301]/35 px-4 text-[13px] font-extrabold text-[#EDC301] transition hover:bg-[#EDC301] hover:text-black"
+                  >
+                    <Navigation size={15} />
+                    Open map
+                  </a>
+                </div>
+                <iframe
+                  title={`${location.name} Google Map`}
+                  src={location.mapsEmbedUrl}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="h-[280px] w-full border-0 sm:h-[330px]"
+                />
               </div>
             </article>
-          ))}
-        </div>
-
-        <div className="mt-10 grid gap-5 lg:grid-cols-2">
-          {LOCATIONS.map((location, index) => (
-            <div
-              key={location.id}
-              data-reveal
-              className="reveal-up overflow-hidden rounded-[8px] border border-white/12 bg-white/[0.04] shadow-[0_24px_70px_rgba(0,0,0,0.32)]"
-              style={{ "--reveal-delay": `${index * 120}ms` } as CSSProperties}
-            >
-              <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 px-5 py-4">
-                <div>
-                  <p className="text-[12px] font-extrabold uppercase tracking-[0.22em] text-[#EDC301]">
-                    Google Maps
-                  </p>
-                  <h3 className="mt-1 text-[20px] font-extrabold text-white">
-                    {location.name}
-                  </h3>
-                </div>
-                <a
-                  href={location.mapsUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex min-h-[40px] items-center gap-2 rounded-full bg-[#EDC301] px-4 text-[13px] font-extrabold text-black transition hover:scale-[1.04]"
-                >
-                  <Navigation size={15} />
-                  Open map
-                </a>
-              </div>
-              <iframe
-                title={`${location.name} Google Map`}
-                src={location.mapsEmbedUrl}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="h-[280px] w-full border-0 sm:h-[330px]"
-              />
-            </div>
           ))}
         </div>
       </div>
