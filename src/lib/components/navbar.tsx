@@ -7,6 +7,7 @@ import { ArrowUp, ShoppingBag } from "lucide-react";
 
 const navItems = [
   { href: "#menu", id: "menu", label: "menu" },
+  { href: "#locations", id: "locations", label: "locations" },
   { href: "#contact", id: "contact", label: "contact" },
   { href: "#order", id: "order", label: "order" },
 ];
@@ -176,8 +177,8 @@ export default function Navbar() {
         <div className="glass-nav mx-3 mt-2 rounded-[22px] border border-white/10 px-5 py-5 shadow-[0_10px_30px_rgba(0,0,0,0.22)]">
           <div className="flex flex-col items-start gap-4">
             <div className="rounded-[18px] bg-white/70 px-4 py-3 text-[#312312] shadow-sm">
-              <p className="text-[13px] font-extrabold">Open daily 11:30AM - 9:00PM</p>
-              <p className="mt-1 text-[13px]">276 5th Avenue, Brooklyn</p>
+              <p className="text-[13px] font-extrabold">Two Brooklyn locations</p>
+              <p className="mt-1 text-[13px]">Park Slope and Prospect Heights</p>
             </div>
             {navItems.map((item) => (
               <a

@@ -20,7 +20,8 @@ const chewy = Chewy({
 
 export const metadata: Metadata = {
   title: "Petite Dumpling",
-  description: "Handcrafted dumpling",
+  description:
+    "Handcrafted dim sum, dumplings, noodles, and small plates in Park Slope and Prospect Heights, Brooklyn.",
 };
 
 import Navbar from "@/lib/components/navbar";

@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import Image from "next/image";
 import type { CSSProperties } from "react";
 import delivery from "@/assets/delivery.png";
@@ -8,6 +7,7 @@ import image1 from "@/assets/image1.png";
 import image2 from "@/assets/image2.png";
 import image3 from "@/assets/image3.png";
 import { Star } from "lucide-react";
+import { LOCATIONS, ORDER_LINKS } from "@/lib/restaurantInfo";
 
 type FeatureCardProps = {
   image: any;
@@ -145,7 +145,8 @@ function FeatureCard({ image, title, description, delay = "0ms" }: FeatureCardPr
           {description}
         </p>
 
-        <button
+        <a
+          href="#menu"
           className="
             cta-sweep group/btn relative mt-5 inline-flex min-h-[44px] w-fit items-center gap-2 overflow-hidden
             rounded-full px-5 py-2.5
@@ -159,9 +160,9 @@ function FeatureCard({ image, title, description, delay = "0ms" }: FeatureCardPr
           }}
         >
           <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition duration-700 group-hover/btn:translate-x-full" />
-          <span className="relative z-10">see more</span>
+          <span className="relative z-10">see menu</span>
           <span className="relative z-10 text-[18px] leading-none">→</span>
-        </button>
+        </a>
       </div>
     </div>
   );
@@ -243,33 +244,19 @@ export default function OrderFeaturesSection() {
             Order Online
           </h2>
 
-          <p
-            className="
-              mt-3 text-center
-              text-[16px]
-              sm:text-[19px]
-              md:text-[22px]
-              lg:text-[24px]
-            "
-            style={{
-              fontFamily: '"Albert Sans", sans-serif',
-              fontWeight: 400,
-              color: "#908B83",
-            }}
-          >
-            Delivery or pickup, whichever gets dumplings to you faster.
+          <p className="mt-3 max-w-[760px] text-center text-[16px] leading-[1.42] text-[#908B83] sm:text-[19px] md:text-[22px] lg:text-[24px]">
+            Park Slope is open for pickup and delivery. Prospect Heights is now
+            open for pickup only.
           </p>
 
           <div
             className="
-              mt-10 grid w-full max-w-[980px] grid-cols-1 gap-10
+              mt-10 grid w-full max-w-[1180px] grid-cols-1 gap-6
               sm:mt-12
-              md:grid-cols-2 md:gap-14
-              lg:mt-14 lg:gap-20
+              lg:mt-14 lg:grid-cols-3
             "
           >
-            {/* DELIVERY */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center rounded-[8px] border-[4px] border-[#EDC301] bg-white/48 p-6 shadow-[0_18px_45px_rgba(49,35,18,0.08)] backdrop-blur-md">
               <div className="group relative">
                 <div className="absolute inset-0 scale-90 rounded-full bg-[#FFD202]/25 blur-3xl" />
                 <Image
@@ -283,8 +270,16 @@ export default function OrderFeaturesSection() {
                 />
               </div>
 
- <Link href="https://www.grubhub.com/restaurant/petite-dumpling-276-5th-avenue-ste-a-brooklyn/4840112?classicAffiliateId=%2Fr%2Fw%2F4840112%2F&utm_source=internal.restaurant.grubhub.com&utm_medium=OOL&utm_campaign=order%20online&utm_content=4840112">
-  <button
+              <p className="mt-4 text-center text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#6F675F]">
+                Park Slope
+              </p>
+              <h3 className="display-font mt-2 text-center text-[42px] leading-none text-[#312312]">
+                Delivery
+              </h3>
+              <a
+                href={ORDER_LINKS.parkSlopeDelivery}
+                target="_blank"
+                rel="noreferrer"
     className="
       cta-sweep group relative mt-5 inline-flex min-h-[56px] items-center justify-center overflow-hidden
       rounded-full px-10 py-3.5
@@ -303,12 +298,10 @@ export default function OrderFeaturesSection() {
   >
     <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition duration-700 group-hover:translate-x-full" />
     <span className="relative z-10">DELIVERY</span>
-  </button>
-</Link>
+  </a>
             </div>
 
-            {/* PICK UP */}
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center rounded-[8px] border-[4px] border-[#F9C0B7] bg-white/48 p-6 shadow-[0_18px_45px_rgba(49,35,18,0.08)] backdrop-blur-md">
               <div className="group relative">
                 <div className="absolute inset-0 scale-90 rounded-full bg-[#F9C0B7]/25 blur-3xl" />
                 <Image
@@ -321,8 +314,17 @@ export default function OrderFeaturesSection() {
                   "
                 />
               </div>
-<Link href="https://order.snackpass.co/673beea78cacfab5b17d4e88?utm_source=qr">
-              <button
+
+              <p className="mt-4 text-center text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#6F675F]">
+                Park Slope
+              </p>
+              <h3 className="display-font mt-2 text-center text-[42px] leading-none text-[#312312]">
+                Pickup
+              </h3>
+              <a
+                href={ORDER_LINKS.parkSlopePickup}
+                target="_blank"
+                rel="noreferrer"
                 className="
                   cta-sweep group relative mt-5 inline-flex min-h-[56px] items-center justify-center overflow-hidden
                   rounded-full border-[3px] px-10 py-3.5
@@ -341,9 +343,67 @@ export default function OrderFeaturesSection() {
               >
                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-[#FFEB8D]/25 to-transparent transition duration-700 group-hover:translate-x-full" />
                 <span className="relative z-10">PICK UP</span>
-              </button>
-              </Link>
+              </a>
             </div>
+
+            <div className="flex flex-col items-center rounded-[8px] border-[4px] border-[#2F7D63] bg-white/48 p-6 shadow-[0_18px_45px_rgba(49,35,18,0.08)] backdrop-blur-md">
+              <div className="group relative">
+                <div className="absolute inset-0 scale-90 rounded-full bg-[#2F7D63]/20 blur-3xl" />
+                <Image
+                  src={pickup}
+                  alt="Prospect Heights pickup order option"
+                  className="
+                    lift-image relative z-10 h-auto w-[190px] object-contain
+                    sm:w-[220px]
+                    lg:w-[250px]
+                  "
+                />
+              </div>
+
+              <p className="mt-4 text-center text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#6F675F]">
+                Prospect Heights
+              </p>
+              <h3 className="display-font mt-2 text-center text-[42px] leading-none text-[#312312]">
+                Pickup Only
+              </h3>
+              <a
+                href={ORDER_LINKS.prospectHeightsPickup}
+                target="_blank"
+                rel="noreferrer"
+                className="
+                  cta-sweep group relative mt-5 inline-flex min-h-[56px] items-center justify-center overflow-hidden
+                  rounded-full border-[3px] px-10 py-3.5
+                  text-[22px]
+                  sm:mt-6 sm:px-12 sm:py-4 sm:text-[24px]
+                  lg:px-12 lg:text-[24px]
+                  transition duration-300 hover:scale-[1.05]
+                  bg-[rgba(255,255,255,0.30)] backdrop-blur-md
+                "
+                style={{
+                  borderColor: "#2F7D63",
+                  color: "#2F7D63",
+                  fontFamily: '"Albert Sans", sans-serif',
+                  fontWeight: 800,
+                }}
+              >
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-[#2F7D63]/15 to-transparent transition duration-700 group-hover:translate-x-full" />
+                <span className="relative z-10">PICK UP</span>
+              </a>
+            </div>
+          </div>
+
+          <div className="mt-8 grid w-full max-w-[780px] gap-3 sm:grid-cols-2">
+            {LOCATIONS.map((location) => (
+              <a
+                key={location.id}
+                href={location.menuUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-[8px] border border-[#EDC301]/35 bg-white/32 px-4 py-3 text-center text-[14px] font-extrabold text-[#312312] transition hover:border-[#EDC301] hover:bg-white/54"
+              >
+                View {location.name} menu
+              </a>
+            ))}
           </div>
         </div>
       </div>

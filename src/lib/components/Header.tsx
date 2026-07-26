@@ -3,7 +3,7 @@ import headerBack from "@/assets/headerback.png";
 import letters from "@/assets/letters.png";
 import deliveryLogo from "@/assets/deliverylogo.png";
 import arrowLogo from "@/assets/arrowlogo.png";
-import Link from "next/link";
+import { ORDER_LINKS } from "@/lib/restaurantInfo";
 
 export default function Header() {
   return (
@@ -88,8 +88,10 @@ export default function Header() {
 
           {/* Buttons */}
           <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:gap-4 lg:mt-[34px] lg:gap-6">
-           <Link href="https://www.grubhub.com/restaurant/petite-dumpling-276-5th-avenue-ste-a-brooklyn/4840112?classicAffiliateId=%2Fr%2Fw%2F4840112%2F&utm_source=internal.restaurant.grubhub.com&utm_medium=OOL&utm_campaign=order%20online&utm_content=4840112">
-            <button
+           <a
+              href={ORDER_LINKS.parkSlopeDelivery}
+              target="_blank"
+              rel="noreferrer"
               className="
                 cta-sweep
                 flex items-center justify-center gap-2
@@ -120,10 +122,9 @@ export default function Header() {
                 height={20}
                 className="object-contain md:h-[20px] md:w-[20px] lg:h-[34px] lg:w-[34px]"
               />
-            </button>
-            </Link>
-<Link href ="https://order.snackpass.co/673beea78cacfab5b17d4e88?utm_source=qr">
-            <button
+            </a>
+            <a
+              href="#locations"
               className="
                 cta-sweep
                 flex items-center justify-center gap-2
@@ -156,8 +157,7 @@ export default function Header() {
                 height={18}
                 className="h-[14px] w-[14px] object-contain md:h-[16px] md:w-[16px] lg:h-[20px] lg:w-[20px] lg:ml-1"
               />
-            </button>
-            </Link>
+            </a>
           </div>
         </div>
       </div>

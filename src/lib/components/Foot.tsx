@@ -9,6 +9,7 @@ import {
   Facebook,
   Music2,
 } from "lucide-react";
+import { LOCATIONS, RESTAURANT_EMAIL, RESTAURANT_WEBSITE } from "@/lib/restaurantInfo";
 
 export default function Footer() {
   return (
@@ -39,7 +40,7 @@ export default function Footer() {
               className="mt-5 text-[20px] font-semibold text-[#F2D98D] sm:text-[24px] lg:text-[28px]"
               style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}
             >
-              11:30AM – 9:00PM
+              Park Slope 11:30AM - 9:00PM · Prospect Heights 4:00PM - 9:00PM
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -55,12 +56,15 @@ export default function Footer() {
                     >
                       Phone
                     </p>
-                    <p
-                      className="mt-1 text-[20px] font-semibold text-white sm:text-[22px]"
-                      style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}
-                    >
-                      718-788-5001
-                    </p>
+                    {LOCATIONS.map((location) => (
+                      <p
+                        key={location.id}
+                        className="mt-1 text-[18px] font-semibold text-white sm:text-[20px]"
+                        style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}
+                      >
+                        {location.name}: {location.phone}
+                      </p>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -81,7 +85,7 @@ export default function Footer() {
                       className="mt-1 break-all text-[18px] font-semibold text-white sm:text-[20px]"
                       style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}
                     >
-                      petitedumpling276@gmail.com
+                      {RESTAURANT_EMAIL}
                     </p>
                   </div>
                 </div>
@@ -99,14 +103,26 @@ export default function Footer() {
                     >
                       Visit us
                     </p>
-                    <p
-                      className="mt-1 text-[18px] font-semibold uppercase leading-[1.5] text-white sm:text-[20px]"
-                      style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}
-                    >
-                      276 5th Avenue
-                      <br />
-                      Brooklyn, NY 11215
-                    </p>
+                    <div className="mt-1 grid gap-4 text-white sm:grid-cols-2">
+                      {LOCATIONS.map((location) => (
+                        <div key={location.id}>
+                          <p className="text-[16px] font-extrabold uppercase tracking-[0.08em] text-[#F2D98D]">
+                            {location.name}
+                          </p>
+                          <p
+                            className="mt-1 text-[17px] font-semibold uppercase leading-[1.45] sm:text-[18px]"
+                            style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}
+                          >
+                            {location.addressLines.map((line) => (
+                              <span key={line} className="block">
+                                {line}
+                              </span>
+                            ))}
+                          </p>
+                          <p className="mt-1 text-[15px] text-[#CBB98C]">{location.hours}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -130,7 +146,7 @@ export default function Footer() {
                       className="mt-1 inline-block text-[20px] font-semibold text-white transition hover:text-[#EDC301]"
                       style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}
                     >
-                      petitedumpling.com
+                      {RESTAURANT_WEBSITE}
                     </a>
                   </div>
                 </div>

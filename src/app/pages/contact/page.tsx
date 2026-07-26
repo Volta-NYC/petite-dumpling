@@ -1,6 +1,7 @@
 "use client";
 
 import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { LOCATIONS, RESTAURANT_EMAIL } from "@/lib/restaurantInfo";
 
 export default function ContactPage() {
   return (
@@ -24,7 +25,7 @@ export default function ContactPage() {
             <p className="text-[18px] sm:text-[20px] text-[#CBB98C] leading-relaxed max-w-[500px]"
               style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}>
               Have a question about our menu, catering, or private events? We'd love to hear from you.
-              Visit us in Brooklyn or reach out through any of the channels below.
+              Visit either Brooklyn location or reach out through the channels below.
             </p>
 
             <div className="space-y-6">
@@ -35,7 +36,11 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-[12px] uppercase tracking-[0.2em] text-[#CBB98C]" style={{ fontFamily: "var(--font-archivo), sans-serif" }}>Phone</p>
-                  <p className="text-[22px] font-semibold text-white tracking-tight" style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}>718-788-5001</p>
+                  {LOCATIONS.map((location) => (
+                    <p key={location.id} className="text-[20px] font-semibold text-white tracking-tight" style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}>
+                      {location.name}: {location.phone}
+                    </p>
+                  ))}
                 </div>
               </div>
 
@@ -46,7 +51,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-[12px] uppercase tracking-[0.2em] text-[#CBB98C]" style={{ fontFamily: "var(--font-archivo), sans-serif" }}>Email</p>
-                  <p className="text-[22px] font-semibold text-white tracking-tight break-all" style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}>petitedumpling276@gmail.com</p>
+                  <p className="text-[22px] font-semibold text-white tracking-tight break-all" style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}>{RESTAURANT_EMAIL}</p>
                 </div>
               </div>
 
@@ -56,8 +61,19 @@ export default function ContactPage() {
                   <MapPin size={24} />
                 </div>
                 <div>
-                  <p className="text-[12px] uppercase tracking-[0.2em] text-[#CBB98C]" style={{ fontFamily: "var(--font-archivo), sans-serif" }}>Location</p>
-                  <p className="text-[22px] font-semibold text-white tracking-tight" style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}>276 5th Avenue<br />Brooklyn, NY 11215</p>
+                  <p className="text-[12px] uppercase tracking-[0.2em] text-[#CBB98C]" style={{ fontFamily: "var(--font-archivo), sans-serif" }}>Locations</p>
+                  <div className="space-y-3">
+                    {LOCATIONS.map((location) => (
+                      <div key={location.id}>
+                        <p className="text-[18px] font-extrabold text-[#EDC301]" style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}>{location.name}</p>
+                        <p className="text-[20px] font-semibold text-white tracking-tight" style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}>
+                          {location.addressLines.map((line) => (
+                            <span key={line} className="block">{line}</span>
+                          ))}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
@@ -68,7 +84,11 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="text-[12px] uppercase tracking-[0.2em] text-[#CBB98C]" style={{ fontFamily: "var(--font-archivo), sans-serif" }}>Hours</p>
-                  <p className="text-[22px] font-semibold text-white tracking-tight" style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}>Open 7 Days<br />11:30AM – 9:00PM</p>
+                  {LOCATIONS.map((location) => (
+                    <p key={location.id} className="text-[20px] font-semibold text-white tracking-tight" style={{ fontFamily: "var(--font-albert-sans), sans-serif" }}>
+                      {location.name}: {location.hours}
+                    </p>
+                  ))}
                 </div>
               </div>
             </div>

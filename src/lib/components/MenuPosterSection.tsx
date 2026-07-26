@@ -1,6 +1,85 @@
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
 import menuImg from "@/assets/menu.png";
+import prospectMenuImg from "@/assets/prospect-menu.png";
 import cuteback from "@/assets/cuteback.png";
+import { MENU_LINKS } from "@/lib/restaurantInfo";
+
+type MenuPosterCardProps = {
+  title: string;
+  eyebrow: string;
+  description: string;
+  image: StaticImageData;
+  href: string;
+  alt: string;
+};
+
+function MenuPosterCard({
+  title,
+  eyebrow,
+  description,
+  image,
+  href,
+  alt,
+}: MenuPosterCardProps) {
+  return (
+    <article data-reveal className="reveal-up relative w-full">
+      <div className="absolute inset-0 mx-auto w-[92%] rounded-[38px] bg-[rgba(255,255,255,0.22)] blur-3xl" />
+
+      <div
+        className="
+          relative mx-auto w-full
+          rounded-[8px] border-[4px]
+          bg-[rgba(255,255,255,0.32)]
+          p-3
+          shadow-[0_25px_70px_rgba(49,35,18,0.16)]
+          backdrop-blur-md
+          sm:p-4
+          md:p-5
+          lg:p-6
+        "
+        style={{ borderColor: "#F9C0B7" }}
+      >
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <p className="text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#2F7D63]">
+              {eyebrow}
+            </p>
+            <h3 className="display-font mt-1 text-[42px] leading-none text-[#312312] sm:text-[54px]">
+              {title}
+            </h3>
+          </div>
+          <a
+            href={href}
+            target="_blank"
+            rel="noreferrer"
+            className="cta-sweep inline-flex min-h-[42px] items-center rounded-full bg-[#EDC301] px-5 text-[14px] font-extrabold text-white"
+          >
+            Open menu
+          </a>
+        </div>
+
+        <p className="mb-5 max-w-[760px] text-[15px] leading-[1.42] text-[#6F675F] sm:text-[16px]">
+          {description}
+        </p>
+
+        <a
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          className="group block overflow-hidden rounded-[8px] bg-[#F2E9E2] p-2 transition hover:scale-[1.01] sm:p-3 md:p-4"
+        >
+          <Image
+            src={image}
+            alt={alt}
+            priority={false}
+            className="lift-image relative z-10 h-auto w-full rounded-[6px] object-contain"
+          />
+        </a>
+      </div>
+    </article>
+  );
+}
 
 export default function MenuPosterSection() {
   return (
@@ -39,53 +118,28 @@ export default function MenuPosterSection() {
           </h2>
 
           <p className="mx-auto mt-4 max-w-[820px] text-center text-[16px] leading-[1.4] text-[#6F675F] sm:text-[18px] md:text-[21px]">
-            Dumplings, noodles, soups, small plates, and chef specials all on
-            the original illustrated menu.
+            Dumplings, noodles, soups, small plates, and chef specials for both
+            Brooklyn locations.
           </p>
         </div>
 
-        <div data-reveal className="reveal-up relative mt-10 w-full sm:mt-12 lg:mt-14">
-          <div className="absolute inset-0 mx-auto w-[92%] max-w-[1100px] rounded-[38px] bg-[rgba(255,255,255,0.22)] blur-3xl" />
-
-          <div
-            className="
-              relative mx-auto w-full max-w-[1120px]
-              rounded-[28px] border-[4px]
-              bg-[rgba(255,255,255,0.32)]
-              p-3
-              shadow-[0_25px_70px_rgba(49,35,18,0.16)]
-              backdrop-blur-md
-              sm:p-4
-              md:p-5
-              lg:p-6
-            "
-            style={{ borderColor: "#F9C0B7" }}
-          >
-            <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
-              <div
-                className="rounded-full border-[3px] px-5 py-2 shadow-sm"
-                style={{
-                  borderColor: "#FFD202",
-                  backgroundColor: "#FFEB8D",
-                }}
-              >
-                <span className="text-[14px] font-extrabold text-[#312312] sm:text-[15px]">
-                  full restaurant menu
-                </span>
-              </div>
-            </div>
-
-            <div className="group relative overflow-hidden rounded-[20px] bg-[#F2E9E2] p-2 sm:p-3 md:p-4">
-              <Image
-                src={menuImg}
-                alt="Petite Dumpling full restaurant menu with dim sum, soup dumplings, bao, noodles, soups, small platters, big platters, congee, sides, tea, and toppings."
-                priority={false}
-                className="
-                  lift-image relative z-10 h-auto w-full rounded-[16px] object-contain
-                "
-              />
-            </div>
-          </div>
+        <div className="mt-10 grid w-full gap-8 sm:mt-12 lg:mt-14 xl:grid-cols-2">
+          <MenuPosterCard
+            title="Park Slope Menu"
+            eyebrow="276 5th Avenue"
+            description="The original Park Slope menu with noodle soup bowls, dim sum, tossed noodles, bao, big platters, daily greens, tea, sides, and toppings."
+            image={menuImg}
+            href={MENU_LINKS.parkSlope}
+            alt="Petite Dumpling Park Slope full restaurant menu with dim sum, soup dumplings, bao, noodles, soups, small platters, big platters, congee, sides, tea, and toppings."
+          />
+          <MenuPosterCard
+            title="Prospect Heights Menu"
+            eyebrow="770 Washington Ave"
+            description="The new Prospect Heights menu focuses on dim sum, soup dumplings, dumplings, bao, gua bao, congee, tossed noodles, soups, daily greens, and sides. Pickup only."
+            image={prospectMenuImg}
+            href={MENU_LINKS.prospectHeights}
+            alt="Petite Dumpling Prospect Heights menu with dim sum, soup dumplings, dumplings, bao, gua bao, congee, tossed noodles, daily greens, soups, small platters, and sides."
+          />
         </div>
 
         <p className="mt-8 max-w-[760px] text-center text-[14px] leading-[1.45] text-[#6F675F] sm:text-[15px]">

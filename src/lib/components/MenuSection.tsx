@@ -192,9 +192,9 @@ export default function MenuSection() {
                 color: "#908B83",
               }}
             >
-              Welcome, new visitors and returning friends. Chef Mei Chau&apos;s menu
-              moves between classic dim sum, neighborhood comfort, and a few
-              playful plates with a wink. Order too much. Share anyway.
+              Welcome, new visitors and returning friends. With Prospect Heights
+              now open, Chef Mei Chau&apos;s menu keeps moving between classic dim
+              sum, neighborhood comfort, and bold plates made for sharing.
             </p>
 
             <Image
@@ -438,8 +438,9 @@ export default function MenuSection() {
                         color: "#908B83",
                       }}
                     >
-                      Bold, savory noodles tossed with fresh vegetables and rich,
-                      spicy flavor for a comforting dish with serious personality.
+                      Dao Xiao noodles tossed with mala spicy sauce, cucumber,
+                      shredded chicken, and shiitake mushrooms for a dish with
+                      serious personality.
                     </p>
                   </div>
 
@@ -552,8 +553,8 @@ export default function MenuSection() {
                       color: "#908B83",
                     }}
                   >
-                    A medley of fresh veggies, tender noodles, and a flavorful
-                    broth that will warm you up on even the chilliest of days.
+                    Choose a noodle, toppings, and a soup base like chicken bone
+                    broth, mala spicy soup, coconut curry soup, or veggie broth.
                   </p>
                 </div>
               </div>
