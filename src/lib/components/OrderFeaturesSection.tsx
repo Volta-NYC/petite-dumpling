@@ -300,17 +300,17 @@ export default function OrderFeaturesSection() {
     }}
   >
     <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition duration-700 group-hover:translate-x-full" />
-    <span className="relative z-10">DELIVERY</span>
+    <span className="relative z-10 whitespace-nowrap">DELIVERY</span>
   </a>
             </div>
 
             <div
               data-reveal
-              className="reveal-scale flex flex-col items-center rounded-[8px] border-[4px] border-[#F9C0B7] bg-white/48 p-6 shadow-[0_18px_45px_rgba(49,35,18,0.08)] backdrop-blur-md"
+              className="reveal-scale flex flex-col items-center rounded-[8px] border-[4px] border-[#EDC301] bg-white/48 p-6 shadow-[0_18px_45px_rgba(49,35,18,0.08)] backdrop-blur-md"
               style={{ "--reveal-delay": "120ms" } as CSSProperties}
             >
               <div className="group relative">
-                <div className="absolute inset-0 scale-90 rounded-full bg-[#F9C0B7]/25 blur-3xl" />
+                <div className="absolute inset-0 scale-90 rounded-full bg-[#FFD202]/25 blur-3xl" />
                 <Image
                   src={pickup}
                   alt="Pickup order option"
@@ -349,7 +349,7 @@ export default function OrderFeaturesSection() {
                 }}
               >
                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-[#FFEB8D]/25 to-transparent transition duration-700 group-hover:translate-x-full" />
-                <span className="relative z-10">PICK UP</span>
+                <span className="relative z-10 whitespace-nowrap">PICK UP</span>
               </a>
             </div>
 
@@ -398,7 +398,7 @@ export default function OrderFeaturesSection() {
                 }}
               >
                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-[#2F7D63]/15 to-transparent transition duration-700 group-hover:translate-x-full" />
-                <span className="relative z-10">DELIVERY</span>
+                <span className="relative z-10 whitespace-nowrap">DELIVERY</span>
               </a>
             </div>
 
@@ -447,7 +447,7 @@ export default function OrderFeaturesSection() {
                 }}
               >
                 <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-[#2F7D63]/15 to-transparent transition duration-700 group-hover:translate-x-full" />
-                <span className="relative z-10">PICK UP</span>
+                <span className="relative z-10 whitespace-nowrap">PICK UP</span>
               </a>
             </div>
           </div>
