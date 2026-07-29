@@ -339,16 +339,17 @@ export default function OrderFeaturesSection() {
                   sm:mt-6 sm:px-12 sm:py-4 sm:text-[24px]
                   lg:px-14 lg:text-[26px]
                   transition duration-300 hover:scale-[1.05]
-                  bg-[rgba(255,255,255,0.30)] backdrop-blur-md
+                  shadow-[0_18px_34px_rgba(237,195,1,0.20)]
                 "
                 style={{
                   borderColor: "#EDC301",
-                  color: "#EDC301",
+                  backgroundColor: "#EDC301",
+                  color: "#FFFFFF",
                   fontFamily: '"Albert Sans", sans-serif',
                   fontWeight: 800,
                 }}
               >
-                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-[#FFEB8D]/25 to-transparent transition duration-700 group-hover:translate-x-full" />
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition duration-700 group-hover:translate-x-full" />
                 <span className="relative z-10 whitespace-nowrap">PICK UP</span>
               </a>
             </div>
@@ -388,16 +389,17 @@ export default function OrderFeaturesSection() {
                   sm:mt-6 sm:px-12 sm:py-4 sm:text-[24px]
                   lg:px-10 lg:text-[22px]
                   transition duration-300 hover:scale-[1.05]
-                  bg-[rgba(255,255,255,0.30)] backdrop-blur-md
+                  shadow-[0_18px_34px_rgba(47,125,99,0.18)]
                 "
                 style={{
                   borderColor: "#2F7D63",
-                  color: "#2F7D63",
+                  backgroundColor: "#2F7D63",
+                  color: "#FFFFFF",
                   fontFamily: '"Albert Sans", sans-serif',
                   fontWeight: 800,
                 }}
               >
-                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-[#2F7D63]/15 to-transparent transition duration-700 group-hover:translate-x-full" />
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/18 to-transparent transition duration-700 group-hover:translate-x-full" />
                 <span className="relative z-10 whitespace-nowrap">DELIVERY</span>
               </a>
             </div>
@@ -437,16 +439,17 @@ export default function OrderFeaturesSection() {
                   sm:mt-6 sm:px-12 sm:py-4 sm:text-[24px]
                   lg:px-10 lg:text-[22px]
                   transition duration-300 hover:scale-[1.05]
-                  bg-[rgba(255,255,255,0.30)] backdrop-blur-md
+                  shadow-[0_18px_34px_rgba(47,125,99,0.18)]
                 "
                 style={{
                   borderColor: "#2F7D63",
-                  color: "#2F7D63",
+                  backgroundColor: "#2F7D63",
+                  color: "#FFFFFF",
                   fontFamily: '"Albert Sans", sans-serif',
                   fontWeight: 800,
                 }}
               >
-                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-[#2F7D63]/15 to-transparent transition duration-700 group-hover:translate-x-full" />
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/18 to-transparent transition duration-700 group-hover:translate-x-full" />
                 <span className="relative z-10 whitespace-nowrap">PICK UP</span>
               </a>
             </div>
