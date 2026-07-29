@@ -2,6 +2,8 @@ export const ORDER_LINKS = {
   parkSlopeDelivery:
     "https://www.grubhub.com/restaurant/petite-dumpling-276-5th-avenue-ste-a-brooklyn/4840112?classicAffiliateId=%2Fr%2Fw%2F4840112%2F&utm_source=internal.restaurant.grubhub.com&utm_medium=OOL&utm_campaign=order%20online&utm_content=4840112",
   parkSlopePickup: "https://order.snackpass.co/petitedumpling",
+  prospectHeightsDelivery:
+    "https://www.grubhub.com/restaurant/petite-dumpling---ph-770-washington-avenue-brooklyn/15161784?proof=true",
   prospectHeightsPickup: "https://order.snackpass.co/petitdumplings",
 };
 
@@ -42,9 +44,9 @@ export const LOCATIONS = [
     phone: "212-274-8585",
     addressLines: ["770 Washington Ave", "Brooklyn, NY 11238"],
     hours: "4:00PM - 9:00PM",
-    orderOptions: ["Pickup only"],
+    orderOptions: ["Pickup", "Delivery"],
     pickupUrl: ORDER_LINKS.prospectHeightsPickup,
-    deliveryUrl: "",
+    deliveryUrl: ORDER_LINKS.prospectHeightsDelivery,
     menuUrl: MENU_LINKS.prospectHeights,
     mapsEmbedUrl:
       "https://www.google.com/maps?q=770%20Washington%20Ave%2C%20Brooklyn%2C%20NY%2011238&output=embed",

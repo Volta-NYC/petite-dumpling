@@ -246,15 +246,14 @@ export default function OrderFeaturesSection() {
           </h2>
 
           <p data-auto-reveal className="mt-3 max-w-[760px] text-center text-[16px] leading-[1.42] text-[#908B83] sm:text-[19px] md:text-[22px] lg:text-[24px]">
-            Park Slope is open for pickup and delivery. Prospect Heights is now
-            open for pickup only.
+            Park Slope and Prospect Heights are open for pickup and delivery.
           </p>
 
           <div
             className="
               mt-10 grid w-full max-w-[1180px] grid-cols-1 gap-6
               sm:mt-12
-              lg:mt-14 lg:grid-cols-3
+              lg:mt-14 lg:grid-cols-4
             "
           >
             <div
@@ -362,6 +361,55 @@ export default function OrderFeaturesSection() {
               <div className="group relative">
                 <div className="absolute inset-0 scale-90 rounded-full bg-[#2F7D63]/20 blur-3xl" />
                 <Image
+                  src={delivery}
+                  alt="Prospect Heights delivery order option"
+                  className="
+                    lift-image relative z-10 h-auto w-[190px] object-contain
+                    sm:w-[220px]
+                    lg:w-[250px]
+                  "
+                />
+              </div>
+
+              <p className="mt-4 text-center text-[13px] font-extrabold uppercase tracking-[0.18em] text-[#6F675F]">
+                Prospect Heights
+              </p>
+              <h3 className="display-font mt-2 text-center text-[42px] leading-none text-[#312312]">
+                Delivery
+              </h3>
+              <a
+                href={ORDER_LINKS.prospectHeightsDelivery}
+                target="_blank"
+                rel="noreferrer"
+                className="
+                  cta-sweep group relative mt-5 inline-flex min-h-[56px] items-center justify-center overflow-hidden
+                  rounded-full border-[3px] px-10 py-3.5
+                  text-[22px]
+                  sm:mt-6 sm:px-12 sm:py-4 sm:text-[24px]
+                  lg:px-10 lg:text-[22px]
+                  transition duration-300 hover:scale-[1.05]
+                  bg-[rgba(255,255,255,0.30)] backdrop-blur-md
+                "
+                style={{
+                  borderColor: "#2F7D63",
+                  color: "#2F7D63",
+                  fontFamily: '"Albert Sans", sans-serif',
+                  fontWeight: 800,
+                }}
+              >
+                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-[#2F7D63]/15 to-transparent transition duration-700 group-hover:translate-x-full" />
+                <span className="relative z-10">DELIVERY</span>
+              </a>
+            </div>
+
+            <div
+              data-reveal
+              className="reveal-scale flex flex-col items-center rounded-[8px] border-[4px] border-[#2F7D63] bg-white/48 p-6 shadow-[0_18px_45px_rgba(49,35,18,0.08)] backdrop-blur-md"
+              style={{ "--reveal-delay": "360ms" } as CSSProperties}
+            >
+              <div className="group relative">
+                <div className="absolute inset-0 scale-90 rounded-full bg-[#2F7D63]/20 blur-3xl" />
+                <Image
                   src={pickup}
                   alt="Prospect Heights pickup order option"
                   className="
@@ -376,7 +424,7 @@ export default function OrderFeaturesSection() {
                 Prospect Heights
               </p>
               <h3 className="display-font mt-2 text-center text-[42px] leading-none text-[#312312]">
-                Pickup Only
+                Pickup
               </h3>
               <a
                 href={ORDER_LINKS.prospectHeightsPickup}
@@ -387,7 +435,7 @@ export default function OrderFeaturesSection() {
                   rounded-full border-[3px] px-10 py-3.5
                   text-[22px]
                   sm:mt-6 sm:px-12 sm:py-4 sm:text-[24px]
-                  lg:px-12 lg:text-[24px]
+                  lg:px-10 lg:text-[22px]
                   transition duration-300 hover:scale-[1.05]
                   bg-[rgba(255,255,255,0.30)] backdrop-blur-md
                 "

@@ -135,7 +135,7 @@ export default function MenuPosterSection() {
           <MenuPosterCard
             title="Prospect Heights Menu"
             eyebrow="770 Washington Ave"
-            description="The new Prospect Heights menu focuses on dim sum, soup dumplings, dumplings, bao, gua bao, congee, tossed noodles, soups, daily greens, and sides. Pickup only."
+            description="The new Prospect Heights menu focuses on dim sum, soup dumplings, dumplings, bao, gua bao, congee, tossed noodles, soups, daily greens, and sides."
             image={prospectMenuImg}
             href={MENU_LINKS.prospectHeights}
             alt="Petite Dumpling Prospect Heights menu with dim sum, soup dumplings, dumplings, bao, gua bao, congee, tossed noodles, daily greens, soups, small platters, and sides."

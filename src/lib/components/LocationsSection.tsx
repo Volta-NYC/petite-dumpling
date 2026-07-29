@@ -20,8 +20,8 @@ export default function LocationsSection() {
           </h2>
           <p className="mt-5 max-w-[760px] text-[17px] leading-[1.45] text-[#F7E9CA] sm:text-[19px]">
             Petite Dumpling is now serving from the original Park Slope spot and
-            the new Prospect Heights location. Prospect Heights is pickup only
-            for now.
+            the new Prospect Heights location. Both Brooklyn spots are available
+            for pickup and delivery.
           </p>
         </div>
 
