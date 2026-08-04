@@ -106,8 +106,6 @@ function FeatureCard({ image, title, description, delay = "0ms" }: FeatureCardPr
         reveal-up group relative flex h-full flex-col overflow-hidden
         rounded-[8px] border-[4px] bg-white
         shadow-[0_18px_40px_rgba(49,35,18,0.08)]
-        transition-shadow duration-300 ease-out
-        hover:shadow-[0_28px_60px_rgba(49,35,18,0.12)]
       "
       style={{ borderColor: "#F9C0B7", "--reveal-delay": delay } as CSSProperties}
     >

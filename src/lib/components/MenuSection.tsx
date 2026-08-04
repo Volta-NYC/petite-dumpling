@@ -46,8 +46,6 @@ function MenuCard({
         min-h-[355px]
         overflow-hidden
         shadow-[0_18px_44px_rgba(49,35,18,0.08)]
-        transition-shadow duration-300 ease-out
-        hover:shadow-[0_24px_58px_rgba(49,35,18,0.12)]
         ${className}
       `}
       style={{ borderColor: "#EDC301", "--reveal-delay": delay } as CSSProperties}
@@ -371,8 +369,6 @@ export default function MenuSection() {
                   rounded-[16px] border-[3px] bg-[#FFF9F0]
                   px-6 py-7
                   shadow-[0_18px_45px_rgba(49,35,18,0.08)]
-                  transition-shadow duration-300
-                  hover:shadow-[0_24px_58px_rgba(49,35,18,0.12)]
                   sm:px-8 sm:py-8
                   lg:min-h-[460px]
                 "
@@ -465,7 +461,7 @@ export default function MenuSection() {
             {/* RIGHT STACKED CARD */}
             <div
               data-reveal
-              className="reveal-up lg:col-span-5 lg:pt-10"
+              className="reveal-up lg:col-span-5 lg:pt-2"
               style={{ "--reveal-delay": "140ms" } as CSSProperties}
             >
               <div
@@ -474,8 +470,6 @@ export default function MenuSection() {
                   rounded-[16px] border-[3px] bg-[#FFF9F0]
                   px-6 py-7
                   shadow-[0_16px_40px_rgba(49,35,18,0.07)]
-                  transition-shadow duration-300
-                  hover:shadow-[0_24px_56px_rgba(49,35,18,0.12)]
                   sm:px-8
                   lg:min-h-[420px]
                 "
@@ -527,7 +521,7 @@ export default function MenuSection() {
                       />
                     </div>
 
-                  <div className="relative mt-8 rounded-[14px] border border-[#EDC301]/12 bg-[#F7F1E8] px-5 py-6">
+                  <div className="relative mt-5 rounded-[14px] border border-[#EDC301]/12 bg-[#F7F1E8] px-5 py-5">
                     <div className="absolute inset-0 rounded-[14px] bg-[#FFEB8D]/10" />
                     <Image
                       src={foodimg5}

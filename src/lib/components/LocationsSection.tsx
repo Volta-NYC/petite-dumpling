@@ -82,7 +82,7 @@ export default function LocationsSection() {
                     href={location.pickupUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="cta-sweep inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#EDC301] px-6 text-[15px] font-extrabold text-white shadow-[0_14px_30px_rgba(237,195,1,0.20)]"
+                    className="cta-sweep inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#EDC301] px-6 text-[15px] font-extrabold text-black shadow-[0_14px_30px_rgba(237,195,1,0.20)] transition hover:bg-[#FFEB8D] hover:shadow-[0_18px_36px_rgba(237,195,1,0.24)]"
                   >
                     Pickup
                   </a>
@@ -91,7 +91,7 @@ export default function LocationsSection() {
                       href={location.deliveryUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="cta-sweep inline-flex min-h-[48px] items-center justify-center rounded-full border border-[#FFEB8D] px-6 text-[15px] font-extrabold text-[#FFEB8D]"
+                      className="cta-sweep inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#EDC301] px-6 text-[15px] font-extrabold text-black shadow-[0_14px_30px_rgba(237,195,1,0.20)] transition hover:bg-[#FFEB8D] hover:shadow-[0_18px_36px_rgba(237,195,1,0.24)]"
                     >
                       Delivery
                     </a>
