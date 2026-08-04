@@ -36,21 +36,19 @@ export default function LocationsSection() {
               <div className="absolute right-0 top-0 h-36 w-36 translate-x-10 -translate-y-10 rounded-full bg-[#EDC301]/12 blur-3xl" />
 
               <div className="relative z-10">
-                <div className="flex flex-wrap items-start justify-between gap-4">
-                  <div>
-                    <p className="text-[13px] font-extrabold uppercase tracking-[0.24em] text-[#EDC301]">
-                      {location.status}
-                    </p>
-                    <h3 className="display-font mt-2 text-[46px] leading-none text-white sm:text-[58px]">
-                      {location.name}
-                    </h3>
-                  </div>
-                  <div className="rounded-full border border-[#EDC301]/30 bg-[#EDC301] px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.08em] text-black">
+                <div>
+                  <p className="text-[13px] font-extrabold uppercase tracking-[0.24em] text-[#EDC301]">
+                    {location.status}
+                  </p>
+                  <h3 className="display-font mt-2 text-[46px] leading-none text-white sm:text-[58px]">
+                    {location.name}
+                  </h3>
+                  <div className="mt-5 inline-flex rounded-full border border-[#EDC301]/30 bg-[#EDC301] px-4 py-2 text-[13px] font-extrabold uppercase tracking-[0.08em] text-black">
                     {location.orderOptions.join(" + ")}
                   </div>
                 </div>
 
-                <div className="mt-7 grid gap-4 text-[16px] text-[#FFF8E7] sm:grid-cols-2">
+                <div className="mt-10 grid gap-4 text-[16px] text-[#FFF8E7] sm:grid-cols-2">
                   <div className="flex gap-3">
                     <MapPin className="mt-1 shrink-0 text-[#EDC301]" size={20} />
                     <p className="font-semibold leading-[1.45]">
