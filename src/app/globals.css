@@ -89,21 +89,16 @@ body {
 }
 
 .cta-sweep::before {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  content: "";
-  background: linear-gradient(110deg, transparent 0%, rgba(255,255,255,0.26) 45%, transparent 62%);
-  transform: translateX(-125%);
-  transition: transform 700ms ease;
+  display: none;
+  content: none;
 }
 
 .cta-sweep:hover::before {
-  transform: translateX(125%);
+  transform: none;
 }
 
 .cta-sweep:hover {
-  animation: buttonBounce 460ms ease;
+  animation: none;
 }
 
 .lift-image {
@@ -113,8 +108,8 @@ body {
 }
 
 .group:hover .lift-image {
-  filter: drop-shadow(0 18px 26px rgba(49, 35, 18, 0.22));
-  transform: scale(1.05) translateY(-4px);
+  filter: drop-shadow(0 12px 18px rgba(49, 35, 18, 0.14));
+  transform: none;
 }
 
 .reveal-up {
@@ -333,15 +328,6 @@ body {
   }
   50% {
     filter: brightness(1.18);
-  }
-}
-
-@keyframes buttonBounce {
-  0%, 100% {
-    transform: translateY(0) scale(1);
-  }
-  45% {
-    transform: translateY(-2px) scale(1.035);
   }
 }
 

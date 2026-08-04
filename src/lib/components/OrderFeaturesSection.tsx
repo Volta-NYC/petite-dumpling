@@ -106,8 +106,8 @@ function FeatureCard({ image, title, description, delay = "0ms" }: FeatureCardPr
         reveal-up group relative flex h-full flex-col overflow-hidden
         rounded-[8px] border-[4px] bg-white
         shadow-[0_18px_40px_rgba(49,35,18,0.08)]
-        transition-all duration-500 ease-out
-        hover:-translate-y-2 hover:shadow-[0_28px_60px_rgba(49,35,18,0.14)]
+        transition-shadow duration-300 ease-out
+        hover:shadow-[0_28px_60px_rgba(49,35,18,0.12)]
       "
       style={{ borderColor: "#F9C0B7", "--reveal-delay": delay } as CSSProperties}
     >
@@ -150,7 +150,7 @@ function FeatureCard({ image, title, description, delay = "0ms" }: FeatureCardPr
           className="
             cta-sweep group/btn relative mt-5 inline-flex min-h-[44px] w-fit items-center gap-2 overflow-hidden
             rounded-full px-5 py-2.5
-            text-[14px] transition duration-300 hover:scale-[1.04]
+            text-[14px] transition duration-300 hover:shadow-[0_14px_28px_rgba(249,192,183,0.24)]
           "
           style={{
             backgroundColor: "#F7CDC4",
@@ -159,7 +159,6 @@ function FeatureCard({ image, title, description, delay = "0ms" }: FeatureCardPr
             fontWeight: 800,
           }}
         >
-          <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/25 to-transparent transition duration-700 group-hover/btn:translate-x-full" />
           <span className="relative z-10">see menu</span>
           <span className="relative z-10 text-[18px] leading-none">→</span>
         </a>
@@ -289,7 +288,7 @@ export default function OrderFeaturesSection() {
       text-[22px]
       sm:mt-6 sm:px-12 sm:py-4 sm:text-[24px]
       lg:px-14 lg:text-[26px]
-      transition duration-300 hover:scale-[1.05]
+      transition duration-300 hover:shadow-[0_20px_38px_rgba(237,195,1,0.24)]
       shadow-[0_18px_34px_rgba(237,195,1,0.20)]
     "
     style={{
@@ -299,7 +298,6 @@ export default function OrderFeaturesSection() {
       fontWeight: 800,
     }}
   >
-    <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition duration-700 group-hover:translate-x-full" />
     <span className="relative z-10 whitespace-nowrap">DELIVERY</span>
   </a>
             </div>
@@ -338,7 +336,7 @@ export default function OrderFeaturesSection() {
                   text-[22px]
                   sm:mt-6 sm:px-12 sm:py-4 sm:text-[24px]
                   lg:px-14 lg:text-[26px]
-                  transition duration-300 hover:scale-[1.05]
+                  transition duration-300 hover:shadow-[0_20px_38px_rgba(237,195,1,0.24)]
                   shadow-[0_18px_34px_rgba(237,195,1,0.20)]
                 "
                 style={{
@@ -349,7 +347,6 @@ export default function OrderFeaturesSection() {
                   fontWeight: 800,
                 }}
               >
-                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/20 to-transparent transition duration-700 group-hover:translate-x-full" />
                 <span className="relative z-10 whitespace-nowrap">PICK UP</span>
               </a>
             </div>
@@ -388,7 +385,7 @@ export default function OrderFeaturesSection() {
                   text-[22px]
                   sm:mt-6 sm:px-12 sm:py-4 sm:text-[24px]
                   lg:px-10 lg:text-[22px]
-                  transition duration-300 hover:scale-[1.05]
+                  transition duration-300 hover:shadow-[0_20px_38px_rgba(47,125,99,0.22)]
                   shadow-[0_18px_34px_rgba(47,125,99,0.18)]
                 "
                 style={{
@@ -399,7 +396,6 @@ export default function OrderFeaturesSection() {
                   fontWeight: 800,
                 }}
               >
-                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/18 to-transparent transition duration-700 group-hover:translate-x-full" />
                 <span className="relative z-10 whitespace-nowrap">DELIVERY</span>
               </a>
             </div>
@@ -438,7 +434,7 @@ export default function OrderFeaturesSection() {
                   text-[22px]
                   sm:mt-6 sm:px-12 sm:py-4 sm:text-[24px]
                   lg:px-10 lg:text-[22px]
-                  transition duration-300 hover:scale-[1.05]
+                  transition duration-300 hover:shadow-[0_20px_38px_rgba(47,125,99,0.22)]
                   shadow-[0_18px_34px_rgba(47,125,99,0.18)]
                 "
                 style={{
@@ -449,7 +445,6 @@ export default function OrderFeaturesSection() {
                   fontWeight: 800,
                 }}
               >
-                <span className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/18 to-transparent transition duration-700 group-hover:translate-x-full" />
                 <span className="relative z-10 whitespace-nowrap">PICK UP</span>
               </a>
             </div>

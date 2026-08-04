@@ -69,7 +69,7 @@ export default function Footer() {
                 href={SOCIAL_LINKS.instagram}
                 target="_blank"
                 rel="noreferrer"
-                className="social-pop flex min-h-[60px] items-center justify-center gap-3 rounded-full bg-[#F7F1E8] px-5 text-[16px] font-extrabold text-black transition duration-200 hover:scale-[1.04] hover:bg-[#EDC301]"
+                className="social-pop flex min-h-[60px] items-center justify-center gap-3 rounded-full bg-[#F7F1E8] px-5 text-[16px] font-extrabold text-black transition duration-200 hover:bg-[#EDC301] hover:shadow-[0_14px_30px_rgba(237,195,1,0.18)]"
               >
                 <Instagram size={21} />
                 Instagram
@@ -78,7 +78,7 @@ export default function Footer() {
                 href={SOCIAL_LINKS.facebook}
                 target="_blank"
                 rel="noreferrer"
-                className="social-pop flex min-h-[60px] items-center justify-center gap-3 rounded-full bg-[#F7F1E8] px-5 text-[16px] font-extrabold text-black transition duration-200 hover:scale-[1.04] hover:bg-[#EDC301]"
+                className="social-pop flex min-h-[60px] items-center justify-center gap-3 rounded-full bg-[#F7F1E8] px-5 text-[16px] font-extrabold text-black transition duration-200 hover:bg-[#EDC301] hover:shadow-[0_14px_30px_rgba(237,195,1,0.18)]"
               >
                 <Facebook size={21} />
                 Facebook
@@ -205,7 +205,7 @@ export default function Footer() {
                     href={location.mapsUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex min-h-[46px] w-fit items-center gap-2 rounded-full bg-[#EDC301] px-5 text-[14px] font-extrabold uppercase tracking-[0.08em] text-black transition hover:scale-[1.04]"
+                    className="inline-flex min-h-[46px] w-fit items-center gap-2 rounded-full bg-[#EDC301] px-5 text-[14px] font-extrabold uppercase tracking-[0.08em] text-black transition hover:shadow-[0_14px_30px_rgba(237,195,1,0.18)]"
                   >
                     <Navigation size={16} />
                     Directions
@@ -252,12 +252,12 @@ export default function Footer() {
             © 2026 Petite Dumpling. All rights reserved.
           </p>
           <a
-            href="https://voltanyc.org/"
+            href="https://novusnyc.org"
             target="_blank"
             rel="noreferrer"
-            className="text-[13px] text-[#CBB98C] transition hover:text-[#EDC301] sm:text-[14px]"
+            className="text-[13px] text-[#CBB98C] transition hover:text-white sm:text-[14px]"
           >
-            Made by Volta
+            Made by <span className="font-extrabold text-[#F6B78D]">Novus</span>
           </a>
         </div>
       </div>

@@ -187,7 +187,7 @@ export default function FirstSection() {
                 sm:text-[15px]
                 md:text-[16px]
                 lg:mt-8 lg:px-10 lg:py-4 lg:text-[17px]
-                transition duration-300 hover:scale-[1.04]
+                transition duration-300 hover:shadow-[0_18px_38px_rgba(249,192,183,0.28)]
                 shadow-[0_16px_34px_rgba(249,192,183,0.24)]
               "
               style={{

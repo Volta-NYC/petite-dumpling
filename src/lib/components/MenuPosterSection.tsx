@@ -67,7 +67,7 @@ function MenuPosterCard({
           href={href}
           target="_blank"
           rel="noreferrer"
-          className="group block overflow-hidden rounded-[8px] bg-[#F2E9E2] p-2 transition hover:scale-[1.01] sm:p-3 md:p-4"
+          className="group block overflow-hidden rounded-[8px] bg-[#F2E9E2] p-2 transition hover:shadow-[0_16px_34px_rgba(49,35,18,0.12)] sm:p-3 md:p-4"
         >
           <Image
             src={image}

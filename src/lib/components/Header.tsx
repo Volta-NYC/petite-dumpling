@@ -100,7 +100,7 @@ export default function Header() {
                 md:h-[48px] md:min-w-[165px]
                 lg:h-[56px] lg:min-w-[180px] lg:px-8
                 shadow-[0_10px_28px_rgba(237,195,1,0.18)]
-                transition duration-200 hover:scale-[1.03]
+                transition duration-200 hover:shadow-[0_14px_34px_rgba(237,195,1,0.24)]
               "
             >
               <span
@@ -135,7 +135,7 @@ export default function Header() {
                 lg:h-[56px] lg:min-w-[180px] lg:px-8
                 backdrop-blur-[8px]
                 shadow-[inset_0_1px_0_rgba(255,255,255,0.14)]
-                transition duration-200 hover:scale-[1.03] hover:bg-[rgba(255,255,255,0.08)]
+                transition duration-200 hover:bg-[rgba(255,255,255,0.08)]
               "
             >
               <span
