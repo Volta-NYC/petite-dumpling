@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Albert_Sans, Archivo, Chewy } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const albertSans = Albert_Sans({
@@ -40,6 +41,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Foot />
+        <Analytics />
       </body>
     </html>
   );
