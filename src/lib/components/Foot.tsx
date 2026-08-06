@@ -252,12 +252,12 @@ export default function Footer() {
             © 2026 Petite Dumpling. All rights reserved.
           </p>
           <a
-            href="https://novusnyc.org"
+            href="https://www.novusnyc.org/"
             target="_blank"
             rel="noreferrer"
             className="text-[13px] text-[#CBB98C] transition hover:text-white sm:text-[14px]"
           >
-            Made by <span className="font-extrabold text-[#F6B78D]">Novus</span>
+            Made by <span className="font-extrabold text-[#F6B78D] hover:text-[#F6B78D]">Novus</span>
           </a>
         </div>
       </div>
